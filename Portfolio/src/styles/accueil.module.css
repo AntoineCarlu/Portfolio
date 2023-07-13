@@ -1,0 +1,27 @@
+/* Section accueil*/
+.accueil {
+  padding: 15px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+  .accueil h1 {
+    font-size: 22px;
+  }
+  .accueil .red {
+    color: rgba(248, 13, 65);
+  }
+  .accueil p {
+    opacity: 90%;
+  }
+
+/* RESPONSIVE */
+@media all and (min-width: 380px) {
+  .accueil h1 {
+    font-size: 24px;
+  }
+}
