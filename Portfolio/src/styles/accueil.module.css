@@ -1,6 +1,7 @@
 /* Section accueil*/
 .accueil {
   padding: 15px;
+  padding-top: 70px;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -17,6 +18,10 @@
   }
   .accueil p {
     opacity: 90%;
+  }
+
+  .accueil img {
+    width: 250px;
   }
 
 /* RESPONSIVE */

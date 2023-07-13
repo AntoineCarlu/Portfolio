@@ -14,7 +14,7 @@ export default function Accueil() {
         </p>
       </div>
       <div>
-        <img src="../../public/photo-cv.jpg" alt="Photo n&b"></img>
+        <img src="img/photo-cv.jpg" alt="Photo n&b"></img>
       </div>
     </section>
   );
@@ -27,4 +27,3 @@ var presentJ = "Développeur Web";
 //     presentJ = "Développeur";
 //   }, 2000);
 // }, 4000);
-  

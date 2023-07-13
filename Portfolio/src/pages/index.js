@@ -2,6 +2,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Header from './header.component';
 import Accueil from './accueil.component';
+import Projects from './projects.component';
+import Profil from './profil.component';
+import Contact from './contact.component';
 import styles from '../styles/main.module.css';
 
 export default function Home() {
@@ -16,8 +19,11 @@ export default function Home() {
       <main className={styles.main}>
         {/* Header */}
         <Header />
-        {/* Section Accueil */}
+        {/* Sections */}
         <Accueil />
+        <Projects />
+        <Profil />
+        <Contact />
         
       </main>
 		</>
