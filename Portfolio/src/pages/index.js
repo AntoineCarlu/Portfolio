@@ -11,12 +11,22 @@ export default function Home() {
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-			<main className={styles.main}>
-      <div className={styles.header}>
-        <a href=''>Home</a>
-        <p>Liste</p>
-      </div>
-    </main>
+      <main className={styles.main}>
+        {/* Header */}
+        <header className={styles.header}>
+          <a href=''>Home</a>
+          <div className={styles.headerList}>
+            <a href=''>Accueil</a>
+            <a href=''>Projets</a>
+            <a href=''>Profil</a>
+            <a href=''>Contact</a>
+          </div>
+        </header>
+        {/* Section Accueil */}
+        <section className={styles.accueil}>
+
+        </section>
+      </main>
 		</>
 	);
 }
