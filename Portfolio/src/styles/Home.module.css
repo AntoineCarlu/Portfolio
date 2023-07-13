@@ -18,6 +18,7 @@
   position: fixed;
   z-index: 1;
 }
+  /*Nav list*/
   .header .headerList {
     opacity: 80%;
     display: flex;
@@ -34,8 +35,23 @@
       font-weight: 500;
       transition: all 0.3s ease-in-out;
     }
+  /*Burger icon*/
+  .header .burger {
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+    .burger .burger1, .burger2, .burger3 {
+      width: 30px;
+      border-top: 2px solid white;
+      border-radius: 1px;
+      transition: all 0.6s ease-in-out;
+    }
 
 /* Section accueil*/
-.accueil {
+/* .accueil {
 
-}
+} */
