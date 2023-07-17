@@ -5,28 +5,122 @@
   width: 100%;
   min-height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.accueilDiv {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
 }
-  .accueil h1 {
+  /*Title*/
+  .accueilDiv h1 {
     font-size: 22px;
   }
-  .accueil .red {
+  .accueilDiv .red {
     color: rgba(248, 13, 65);
   }
-  .accueil p {
+  .accueilDiv .resumeText p {
     opacity: 90%;
   }
-
-  .accueil img {
+  /*img of myself*/
+  .accueilDiv img {
     width: 250px;
   }
 
+/*Links div*/
+.LinksP {
+  margin-left: 5px;
+  font-size: 18px;
+}
+.accueilLinks {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+  .accueilLinks div {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+  }
+  /*imgs links*/
+  .accueilLinks .linImg {
+    width: 60px;
+  }
+  .accueilLinks .gitImg {
+    width: 50px;
+  }
+  .accueilLinks .cvImg {
+    width: 55px;
+  }
 /* RESPONSIVE */
 @media all and (min-width: 380px) {
   .accueil h1 {
+    font-size: 24px;
+  }
+  /*imgs links*/
+  .accueilLinks div {
+    width: 70px;
+    height: 70px;
+  }
+  .accueilLinks .linImg {
+    width: 70px;
+  }
+  .accueilLinks .gitImg {
+    width: 60px;
+  }
+  .accueilLinks .cvImg {
+    width: 65px;
+  }
+}
+@media all and (min-width: 480px) {
+  .resumeText {
+    max-width: 450px;
+  }
+}
+/*High format*/
+@media all and (min-width: 780px) {
+  .accueilDiv {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    grid-column-gap: 50px;
+    grid-row-gap: 30px;
+  }
+  .resumeTitle {grid-area: 1 / 1 / 2 / 2;}
+  .resumeText {grid-area: 2 / 1 / 3 / 2;}
+  .resumeImage {grid-area: 1 / 2 / 4 / 3;}
+  .resumeLinks {grid-area: 3 / 1 / 4 / 2;}
+  /*Content*/
+  .accueilDiv h1 {
+    font-size: 30px;
+  }
+  .accueilDiv .resumeText p {
+    font-size: 20px;
+  }
+  .accueilDiv img {
+    width: 320px;
+  }
+  .LinksP {
+    font-size: 22px;
+  }
+}
+@media all and (min-width: 1600px) and (min-height: 900px) {
+  .accueilDiv h1 {
+    font-size: 36px;
+  }
+  .accueilDiv .resumeText p {
+    font-size: 22px;
+  }
+  .accueilDiv img {
+    width: 350px;
+  }
+  .LinksP {
     font-size: 24px;
   }
 }

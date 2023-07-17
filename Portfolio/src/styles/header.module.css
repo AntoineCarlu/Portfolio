@@ -59,9 +59,9 @@
 
 /* RESPONSIVE */
 /*short mobile*/
-@media all and (max-width: 280px) {
+@media all and (max-width: 320px) {
   .header a {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 /*higher than mobile*/
