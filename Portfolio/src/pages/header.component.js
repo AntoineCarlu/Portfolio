@@ -1,4 +1,5 @@
 import styles from '../styles/header.module.css';
+import React, { useEffect, useState } from 'react';
 
 
 export default function Header() {
@@ -40,16 +41,54 @@ export default function Header() {
     }
   }
 
+
+  // const [currentSection, setCurrentSection] = useState('home');
+  // useEffect(() => {
+  //   const CurrentSection = () => {
+  //     const sections = document.querySelectorAll('section');
+  //     let currentSectionId = '';
+
+  //     sections.forEach((section) => {
+  //       const sectionTop = section.offsetTop;
+  //       const sectionHeight = section.clientHeight;
+
+  //       if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
+  //         currentSectionId = section.getAttribute('id');
+  //       }
+  //     });
+
+  //     setCurrentSection(currentSectionId);
+  //   };
+
+  //   window.addEventListener('scroll', CurrentSection);
+  //   return () => {
+  //     window.removeEventListener('scroll', CurrentSection);
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   const navLinks = document.querySelectorAll('.nav_link');
+
+  //   navLinks.forEach((link) => {
+  //     if (link.classList.contains(currentSection)) {
+  //       link.style.opacity = '1';
+  //     } else {
+  //       link.style.opacity = '0.8';
+  //     }
+  //   });
+  // }, [currentSection]);
+
+
   return (
     <header className={styles.header}>
       <a href=''>{/*Home*/}</a>
       <div className={styles.headerList}>
         <div className={styles.navListExt}>
         <div className={styles.navList} id="nl">
-          <a href='#Accueil'>Accueil</a>
-          <a href='#Projects'>Projets</a>
-          <a href=''>Profil</a>
-          <a href=''>Contact</a>
+          <a href='#Accueil' className={styles.nav_link}>Accueil</a>
+          <a href='#Projects' className={styles.nav_link}>Projets</a>
+          <a href='#' className={styles.nav_link}>Profil</a>
+          <a href='#' className={styles.nav_link}>Contact</a>
         </div>
         </div>
         <div className={styles.burger} onClick={burgerClicked}>
