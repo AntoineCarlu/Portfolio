@@ -1,5 +1,62 @@
+/*Positionnements*/
 .projects {
   padding: 15px;
+  padding-top: 35px;
   width: 100%;
   min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+  .projectsFlex {
+    width: 80%;
+    height: fit-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  /*The boxs*/
+  .projectBox {
+    margin: 20px;
+    width: 350px;
+    height: 300px;
+    border: 2px solid white;
+
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s linear;
+  }
+    /*description div*/
+    .projectBox div {
+      width: 100%;
+      height: 75px;
+      text-align: center;
+      background-color: #212428e0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+      transform: translateY(100%);
+      transition: all 0.3s ease-in;
+    }
+    .projectBox div p {
+      font-size: 18px;
+    }
+      /*Animation on hover effect*/
+      .projectBox:hover {
+        margin: 10px;
+        width: 370px;
+        height: 320px;
+        border: 3.5px solid rgba(248, 13, 65);
+      }
+      .projectBox:hover div {
+        transform: translateY(0%);
+      }
