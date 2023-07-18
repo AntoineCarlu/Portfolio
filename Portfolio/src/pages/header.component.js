@@ -87,7 +87,7 @@ export default function Header() {
         <div className={styles.navList} id="nl">
           <a href='#Accueil' className={styles.nav_link}>Accueil</a>
           <a href='#Projects' className={styles.nav_link}>Projets</a>
-          <a href='#' className={styles.nav_link}>Profil</a>
+          <a href='#Profil' className={styles.nav_link}>Profil</a>
           <a href='#' className={styles.nav_link}>Contact</a>
         </div>
         </div>
