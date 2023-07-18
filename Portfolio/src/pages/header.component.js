@@ -42,53 +42,44 @@ export default function Header() {
   }
 
 
-  // const [currentSection, setCurrentSection] = useState('home');
-  // useEffect(() => {
-  //   const CurrentSection = () => {
-  //     const sections = document.querySelectorAll('section');
-  //     let currentSectionId = '';
+  //Event to change the color of nav-bar links if on correct section
+  const [currentSection, setCurrentSection] = useState('home');
+  useEffect(() => {
+    //check current section
+    const CurrentSection = () => {
+      const sections = document.querySelectorAll('section');
+      let currentSectionId = '';
 
-  //     sections.forEach((section) => {
-  //       const sectionTop = section.offsetTop;
-  //       const sectionHeight = section.clientHeight;
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
 
-  //       if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
-  //         currentSectionId = section.getAttribute('id');
-  //       }
-  //     });
+        if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+      //note current section to have correct color
+      setCurrentSection(currentSectionId);
+    };
 
-  //     setCurrentSection(currentSectionId);
-  //   };
+    //execute the script when page scroll
+    window.addEventListener('scroll', CurrentSection);
+    return () => {
+      window.removeEventListener('scroll', CurrentSection);
+    };
+  }, []);
 
-  //   window.addEventListener('scroll', CurrentSection);
-  //   return () => {
-  //     window.removeEventListener('scroll', CurrentSection);
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   const navLinks = document.querySelectorAll('.nav_link');
-
-  //   navLinks.forEach((link) => {
-  //     if (link.classList.contains(currentSection)) {
-  //       link.style.opacity = '1';
-  //     } else {
-  //       link.style.opacity = '0.8';
-  //     }
-  //   });
-  // }, [currentSection]);
-
-
+  //Content of the Header
   return (
     <header className={styles.header}>
       <a href=''>{/*Home*/}</a>
       <div className={styles.headerList}>
         <div className={styles.navListExt}>
         <div className={styles.navList} id="nl">
-          <a href='#Accueil' className={styles.nav_link}>Accueil</a>
-          <a href='#Projects' className={styles.nav_link}>Projets</a>
-          <a href='#Profil' className={styles.nav_link}>Profil</a>
-          <a href='#' className={styles.nav_link}>Contact</a>
+          <a href='#Accueil' className={currentSection === 'Accueil' ? styles.active : ''}>Accueil</a>
+          <a href='#Projects' className={currentSection === 'Projects' ? styles.active : ''}>Projets</a>
+          <a href='#Profil' className={currentSection === 'Profil' ? styles.active : ''}>Profil</a>
+          <a href='#' className={currentSection === '' ? styles.active : ''}>Contact</a>
         </div>
         </div>
         <div className={styles.burger} onClick={burgerClicked}>
@@ -97,4 +88,5 @@ export default function Header() {
       </div>
     </header>
   );
+
 }

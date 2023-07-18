@@ -1,10 +1,76 @@
+/*Positionnement*/
 .profil {
   padding: 15px;
-  padding-top: 35px;
+  padding-top: 70px;
   width: 100%;
   min-height: 100vh;
 
-  /* display: flex;
+  display: flex;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+}
+  .profil h1 {
+    margin: 10px;
+    font-size: 26px;
+  }
+  /*Buttons select*/
+  .profil .buttonsDiv {
+     width: 300px;
+     height: 70px;
+     background-color: rgba(25, 27, 30);
+  }
+    .buttonsDiv button {
+      width: 100px;
+      height: 70px;
+      color: white;
+      background-color: rgba(25, 27, 30);
+      border: none;
+      cursor: pointer;
+    }
+    /*hover effect*/
+    .buttonsDiv button:hover {
+      color: rgba(248, 13, 65);
+    }
+
+/* RESPONSIVE */
+/*Size of elements*/
+@media all and (min-width: 520px) {
+  .profil h1 {
+    font-size: 28px;
+  }
+  .profil .buttonsDiv {
+    width: 450px;
+    height: 80px;
+  }
+  .buttonsDiv button {
+    width: 150px;
+    height: 80px;
+    font-size: 18px;
+  }
+}
+@media all and (min-width: 720px) {
+  .profil h1 {
+    font-size: 30px;
+  }
+  .profil .buttonsDiv {
+    width: 600px;
+  }
+  .buttonsDiv button {
+    width: 200px;
+    font-size: 20px;
+  }
+}
+@media all and (min-width: 980px) {
+  .profil h1 {
+    font-size: 32px;
+  }
+  .profil .buttonsDiv {
+    width: 900px;
+  }
+  .buttonsDiv button {
+    width: 300px;
+    font-size: 22px;
+  }
 }
