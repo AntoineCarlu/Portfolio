@@ -33,6 +33,10 @@
     .buttonsDiv button:hover {
       color: rgba(248, 13, 65);
     }
+    /*border on button with active class*/
+    .buttonsDiv .activeButton {
+      border: 2px solid rgba(248, 13, 65);
+    }
 
 /* RESPONSIVE */
 /*Size of elements*/

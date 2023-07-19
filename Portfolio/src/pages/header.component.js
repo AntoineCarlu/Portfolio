@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 export default function Header() {
 
-  //Event to display header list when click on the burger-menu icon
+  // Script to display header nav-bar list when user click on the burger-menu icon
   var burgerCheck = false;
   function burgerClicked() {
     //define elements
@@ -41,11 +41,10 @@ export default function Header() {
     }
   }
 
-
-  //Event to change the color of nav-bar links if on correct section
+  // Script to change the color of nav-bar anchors links if on corresponding section
   const [currentSection, setCurrentSection] = useState('home');
   useEffect(() => {
-    //check current section
+    //function to check current section and give correct active class
     const CurrentSection = () => {
       const sections = document.querySelectorAll('section');
       let currentSectionId = '';
@@ -58,10 +57,12 @@ export default function Header() {
           currentSectionId = section.getAttribute('id');
         }
       });
-      //note current section to have correct color
+      //save current section to have correct color
       setCurrentSection(currentSectionId);
     };
 
+    //execute the script on page load
+    CurrentSection();
     //execute the script when page scroll
     window.addEventListener('scroll', CurrentSection);
     return () => {
@@ -69,7 +70,8 @@ export default function Header() {
     };
   }, []);
 
-  //Content of the Header
+
+  // Content of the Header
   return (
     <header className={styles.header}>
       <a href=''>{/*Home*/}</a>

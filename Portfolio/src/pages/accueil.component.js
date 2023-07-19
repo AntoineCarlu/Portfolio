@@ -2,6 +2,7 @@ import styles from '../styles/accueil.module.css';
 
 
 export default function Accueil() {
+
   const presentJ = "Développeur Web";
 
   return (
@@ -31,4 +32,5 @@ export default function Accueil() {
     </div>
     </section>
   );
+  
 }
