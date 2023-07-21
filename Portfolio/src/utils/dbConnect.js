@@ -3,7 +3,7 @@ import mysql from 'mysql2';
 const pool = mysql
     .createPool({
         host: 'db_portfolio',
-        port: 3307,
+        // port: 3307,
         user: 'root',
         password: 'root',
         database: 'portfolio',

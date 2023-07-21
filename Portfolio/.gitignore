@@ -37,3 +37,7 @@ tsconfig.tsbuildinfo
 #docker
 docker-compose.yml
 docker-build/
+
+#others
+portfolio.sql
+src/utils/

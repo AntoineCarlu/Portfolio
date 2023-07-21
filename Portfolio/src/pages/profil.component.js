@@ -18,7 +18,7 @@ export default function Profil() {
   }, []);
 
 
-  // Content of the page
+  // Content of the section
   return (
     <section className={styles.profil} id="Profil">
       <h1><u>Mon Profil</u></h1>
