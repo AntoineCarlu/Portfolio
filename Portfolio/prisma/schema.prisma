@@ -10,6 +10,39 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+
 model Admin {
-  id Int @id @default(autoincrement())
+  id              Int       @id @default(autoincrement())
+  user            String    @unique
+  password        String
+}
+
+model Projects {
+  id              Int       @id @default(autoincrement())
+  project_link    String
+  project_img     String
+  project_descr   String
+}
+
+model Skills {
+  id              Int       @id @default(autoincrement())
+  skill_name      String
+  skill_pourcent  String
+  skill_category  String
+}
+
+model Education {
+  id                Int       @id @default(autoincrement())
+  education_title   String
+  education_infos   String
+  education_descr   String
+  education_date    String
+}
+
+model Experience {
+  id                Int       @id @default(autoincrement())
+  experience_title  String
+  experience_infos  String
+  experience_descr  String
+  experience_date   String
 }
