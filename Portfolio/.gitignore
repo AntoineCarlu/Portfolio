@@ -44,4 +44,5 @@ docker-build/
 
 #others
 portfolio.sql
-src/utils/
+utils/
+server/
