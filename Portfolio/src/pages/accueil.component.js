@@ -8,7 +8,7 @@ export default function Accueil() {
 
   return (
     <section className={styles.accueil} id="Accueil">
-    <div className={styles.accueilDiv}>
+    <div className={styles.accueil_div}>
       <div className={styles.resumeTitle}>
         <h1>Enchanté, je m'appelle <span className={styles.red}>Antoine Carlu</span> !<br></br>Je suis un <span className={styles.red}>{presentJ}</span>,</h1>
       </div>
@@ -23,8 +23,8 @@ export default function Accueil() {
         <img src="https://res.cloudinary.com/dpp39fz7x/image/upload/v1689772587/Portfolio/photo-cv_w7v2nr.jpg" alt="Photo n&b"></img>
       </div>
       <div className={styles.resumeLinks}>
-        <p className={styles.LinksP}>Voici quelques liens utiles :</p>
-        <div className={styles.accueilLinks}>
+        <p className={styles.LinksP}>Voici quelques liens intéressants :</p>
+        <div className={styles.accueil_links}>
           <a href="https://www.linkedin.com/in/antoine-carlu-703904269/" target="_blank"><div><img src="https://res.cloudinary.com/dpp39fz7x/image/upload/v1689772586/Portfolio/LinkedIn-icon_fugeva.png" alt="LinkedIn-icon" className={styles.linImg}></img></div></a>
           <a href="https://github.com/AntoineCarlu" target="_blank"><div><img src="https://res.cloudinary.com/dpp39fz7x/image/upload/v1689772586/Portfolio/Github-icon_lh5a4v.png" alt="GitHub-icon" className={styles.gitImg}></img></div></a>
           <a href="https://antoinecarlu.github.io/CV-Web/" target="_blank"><div><img src="https://res.cloudinary.com/dpp39fz7x/image/upload/v1689772586/Portfolio/CV-icon_gxem53.png" alt="CV-icon" className={styles.cvImg}></img></div></a>

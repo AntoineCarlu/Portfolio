@@ -75,9 +75,9 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <a href=''>{/*Home*/}</a>
-      <div className={styles.headerList}>
-        <div className={styles.navListExt}>
-        <div className={styles.navList} id="nl">
+      <div className={styles.header_list}>
+        <div className={styles.nav_list_ext}>
+        <div className={styles.nav_list} id="nl">
           <a href='#Accueil' className={currentSection === 'Accueil' ? styles.active : ''}>Accueil</a>
           <a href='#Projects' className={currentSection === 'Projects' ? styles.active : ''}>Projets</a>
           <a href='#Profil' className={currentSection === 'Profil' ? styles.active : ''}>Profil</a>

@@ -27,8 +27,8 @@ export default function Projects() {
       <div className={styles.projectsFlex}>
       {projects.map((project) => (
         <div key={project.id} className={styles.projectBox}>
-          <a href={project.Project_link} target='_blank'><div className={styles.boxLink}><img src={project.Project_img} alt="" /></div></a>
-          <div className={styles.boxText}><p>{project.Project_descr}</p></div>
+          <a href={project.Project_link} target='_blank'><div className={styles.box_link}><img src={project.Project_img} alt="" /></div></a>
+          <div className={styles.box_text}><p>{project.Project_descr}</p></div>
         </div>
       ))}
       </div>

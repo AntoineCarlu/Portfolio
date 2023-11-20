@@ -22,7 +22,7 @@ export default function Profil() {
   return (
     <section className={styles.profil} id="Profil">
       <h1><u>Mon Profil</u></h1>
-      <div className={styles.buttonsDiv}>
+      <div className={styles.buttons_div}>
         <button className={activeButton === 0 ? styles.activeButton : ''} onClick={() => profilButton(0)}>Compétences</button>
         <button className={activeButton === 1 ? styles.activeButton : ''} onClick={() => profilButton(1)}>Éducation</button>
         <button className={activeButton === 2 ? styles.activeButton : ''} onClick={() => profilButton(2)}>Expérience</button>
