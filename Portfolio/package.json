@@ -1,31 +1,22 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "migrate:dev": "npx dotenv -e .env.local -- prisma migrate dev",
-    "db:push": "npx dotenv -e .env.local -- prisma db push",
-    "migrate:reset": "npx dotenv -e .env.local -- prisma migrate reset",
-    "db:seed": "npx dotenv -e .env.local -- prisma db seed",
-    "prisma:generate": "npx dotenv -e .env.local -- prisma generate",
-    "prisma:studio": "npx dotenv -e .env.local -- prisma studio",
-    "production:build": "npx prisma generate && npx prisma migrate deploy && next build"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@prisma/client": "^5.0.0",
-    "dotenv-cli": "^7.2.1",
-    "eslint": "8.45.0",
-    "eslint-config-next": "13.4.10",
-    "mysql2": "^3.5.2",
-    "next": "13.4.10",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.0.1",
+    "next": "14.0.3",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "dotenv": "^16.3.1"
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3"
   }
 }
