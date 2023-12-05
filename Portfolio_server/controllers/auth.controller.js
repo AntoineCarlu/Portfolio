@@ -12,6 +12,22 @@ const conn = mysql.createConnection({
   port: process.env.DB_PORT,
 })
 
+//create an "Admin" table if it doesn't already exists
+const adminTable = `
+  CREATE TABLE IF NOT EXISTS Admin (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+  );
+`;
+conn.query(adminTable, function (err, res) {
+  if (err) {
+    console.error('Erreur lors de la création de la table "Admin":', err.message);
+  } else {
+    console.log('Table created successfully');
+  }
+});
+
 //function to create a secret JWT token
 function generateJWT(user) {
   const secretKey = process.env.JWT_SECRET;
