@@ -37,3 +37,4 @@ next-env.d.ts
 
 
 src/app/admin
+src/app/api/auth.js

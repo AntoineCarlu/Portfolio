@@ -2,3 +2,8 @@
 .vscode/
 .vscode
 .env
+
+
+docker-compose.yml
+# mysql_db/
+mongo_db/

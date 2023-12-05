@@ -2,6 +2,7 @@
 const mysql = require('mysql2');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+
 //Establishes a connection to the MySQL database
 const conn = mysql.createConnection({
   host: process.env.DB_HOST,
