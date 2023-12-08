@@ -35,6 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-
-src/app/admin
-src/app/api/auth.js
+src/components/adminRouter.js
+src/app/dashboard
