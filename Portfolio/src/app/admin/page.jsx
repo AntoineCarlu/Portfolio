@@ -1,15 +1,15 @@
 "use client"
 
-import styles from '@/app/page.module.css';
+import { setAuthentication } from '@/libs/auth';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-
+import styles from '@/app/page.module.css';
 
 export default function Admin() {
 
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
-  const token = process.env.API_TOKEN;
+  // const token = process.env.API_TOKEN;
   const router = useRouter();
 
   const handleLogin = async (e) => {
@@ -20,17 +20,19 @@ export default function Admin() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          authorization: `Bearer ${token}`,
+          authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYW50b2luZSIsImlhdCI6MTcwMTI2MTE4MywiZXhwIjoxNzAzOTM5NTgzfQ.xuaMpb3i9Q94RRSF6ywNOATTIOK3dH-EOhD8MTsP9SQ`,
         },
         body: JSON.stringify({ user, password }),
       });
 
       //check if authentification is correct
       if (res.ok) {
+        setAuthentication(true);
         router.replace("dashboard");
         console.log('Login réussi !');
       } else {
-        console.log('Login incorrect !');
+        const error = await res.json();
+        console.log('Login incorrect !', error.message);
       }
     } catch (error) {
       console.error('Error during login :', error);
@@ -44,12 +46,12 @@ export default function Admin() {
         <form onSubmit={handleLogin}>
           <label>
             Username:
-            <input type="text" value={user} onChange={(e) => setUser(e.target.value)} placeholder="Username" />
+            <input type="text" maxLength={10} value={user} onChange={(e) => setUser(e.target.value)} placeholder="Username" />
           </label>
           <br />
           <label>
             Password:
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+            <input type="password" maxLength={25} value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
           </label>
           <br />
           <button type="submit">Login</button>
