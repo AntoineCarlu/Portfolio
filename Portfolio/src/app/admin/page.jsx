@@ -9,7 +9,6 @@ export default function Admin() {
 
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
-  // const token = process.env.API_TOKEN;
   const router = useRouter();
 
   const handleLogin = async (e) => {
@@ -20,7 +19,6 @@ export default function Admin() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYW50b2luZSIsImlhdCI6MTcwMTI2MTE4MywiZXhwIjoxNzAzOTM5NTgzfQ.xuaMpb3i9Q94RRSF6ywNOATTIOK3dH-EOhD8MTsP9SQ`,
         },
         body: JSON.stringify({ user, password }),
       });

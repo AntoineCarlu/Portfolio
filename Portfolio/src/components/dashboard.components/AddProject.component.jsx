@@ -9,9 +9,7 @@ export default function AddProject() {
   const [project_descr, setProject_descr] = useState('');
 
   // Function to add news "Projects" with form element
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleSubmit = async () => {
     if (!project_link || !project_img || !project_descr) {
       alert('Please fill in all fields.');
       return;

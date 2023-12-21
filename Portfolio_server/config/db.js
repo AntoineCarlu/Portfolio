@@ -1,19 +1,20 @@
-const mysql = require('mysql2');
+const { MongoClient } = require('mongodb');
 require('dotenv').config();
 
 const connectDb = async () => {
   try {
-    const connection = await mysql.createConnection({
-      host: process.env.DB_HOST,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
-      port: process.env.DB_PORT,
+    const client = new MongoClient(process.env.DB_CONNECTION_STRING, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     });
+
+    await client.connect();
+
     console.log('Connection à la base de données réussie !')
-    return connection;
+    return client;
   } catch(err) {
     console.error('Erreur lors de la connexion avec la base de données', err);
+    throw err;
   }
 };
 

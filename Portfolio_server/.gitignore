@@ -5,5 +5,4 @@
 
 
 docker-compose.yml
-# mysql_db/
-mongo_db/
+mysql_db/
