@@ -11,16 +11,19 @@ export default function Dashboard() {
   // Function to protect the route to being access by unauthorized user
   useLayoutEffect(() => { 
     const isAuth = isAuthenticated;
-    if(!isAuth) {
+    if (!isAuth) {
       redirect('/');
     }
   }, [])
 
   return (
     <main className={styles.main}>
-      <div className={styles.dashboard_div}>
-        <AddProject />
-      </div>
+      {/* Only show this JSX elements when the user is authentificated */}
+      {isAuthenticated ? (
+        <div className={styles.dashboard_div}>
+          <AddProject />
+        </div>
+      ) : null}
     </main>
   );
 }
