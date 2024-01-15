@@ -35,32 +35,30 @@ export default function AddProject() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          onChange={(e) => setProject_link(e.target.value)}
-          value={project_link}
-          type="text" 
-          placeholder='Project link' 
-        />
+    <form onSubmit={handleSubmit}>
+      <input
+        onChange={(e) => setProject_link(e.target.value)}
+        value={project_link}
+        type="text" 
+        placeholder='Project link' 
+      />
 
-        <input
-          onChange={(e) => setProject_img(e.target.value)}
-          value={project_img}
-          type="text" 
-          placeholder='Project image link' 
-        />
+      <input
+        onChange={(e) => setProject_img(e.target.value)}
+        value={project_img}
+        type="text" 
+        placeholder='Project image link' 
+      />
 
-        <input
-          onChange={(e) => setProject_descr(e.target.value)}
-          value={project_descr}
-          type="text" 
-          placeholder='Project description' 
-        />
+      <input
+        onChange={(e) => setProject_descr(e.target.value)}
+        value={project_descr}
+        type="text" 
+        placeholder='Project description' 
+      />
 
-        <button type="submit">Add Project</button>
-      </form>
-    </div>
+      <button type="submit">Add Project</button>
+    </form>
   );
 
 }

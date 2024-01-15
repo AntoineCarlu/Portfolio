@@ -3,7 +3,7 @@
 import { isAuthenticated } from '@/libs/auth';
 import { redirect } from 'next/navigation';
 import { useLayoutEffect } from 'react';
-import styles from '@/app/page.module.css';
+import styles from './dashboard.module.css';
 import AddProject from '@/components/dashboard.components/AddProject.component';
 
 export default function Dashboard() {
@@ -18,7 +18,9 @@ export default function Dashboard() {
 
   return (
     <main className={styles.main}>
-      <AddProject />
+      <div className={styles.dashboard_div}>
+        <AddProject />
+      </div>
     </main>
   );
 }
