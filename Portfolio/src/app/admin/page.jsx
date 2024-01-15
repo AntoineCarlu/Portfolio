@@ -3,7 +3,7 @@
 import { setAuthentication } from '@/libs/auth';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import styles from '@/app/page.module.css';
+import styles from './admin.module.css';
 
 export default function Admin() {
 
@@ -39,20 +39,20 @@ export default function Admin() {
 
   return (
     <main className={styles.main}>
-      <div>
-        <h1>Login</h1>
+      <div className={styles.login_div}>
+        <h1>Connexion</h1>
         <form onSubmit={handleLogin}>
           <label>
-            Username:
-            <input type="text" maxLength={10} value={user} onChange={(e) => setUser(e.target.value)} placeholder="Username" />
+            Identifiant :
+            <input type="text" maxLength={20} value={user} onChange={(e) => setUser(e.target.value)} placeholder="Identifiant" />
           </label>
           <br />
           <label>
-            Password:
-            <input type="password" maxLength={25} value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+            Mot de passe :
+            <input type="password" maxLength={25} value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Mot de passe" />
           </label>
           <br />
-          <button type="submit">Login</button>
+          <button type="submit">Valider</button>
         </form>
       </div>
     </main>
