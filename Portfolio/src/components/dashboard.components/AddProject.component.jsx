@@ -57,7 +57,7 @@ export default function AddProject() {
         placeholder='Project description' 
       />
 
-      <button type="submit">Add Project</button>
+      <button type="submit">Create Project</button>
     </form>
   );
 

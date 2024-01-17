@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import { useLayoutEffect } from 'react';
 import styles from './dashboard.module.css';
 import AddProject from '@/components/dashboard.components/AddProject.component';
+import SelectProjects from '@/components/dashboard.components/FetchProjects.component';
 
 export default function Dashboard() {
 
@@ -20,9 +21,13 @@ export default function Dashboard() {
     <main className={styles.main}>
       {/* Only show this JSX elements when the user is authentificated */}
       {isAuthenticated ? (
+
         <div className={styles.dashboard_div}>
+          <h1>Project | Create</h1>
           <AddProject />
+          {/* <SelectProjects /> */}
         </div>
+
       ) : null}
     </main>
   );
