@@ -1,39 +1,55 @@
+import React, { useState, useEffect } from 'react';
 import DeleteBtn from "./DeleteProject.component";
 
-const getProjects = async () => {
-  try {
-    const res = await fetch("http://localhost:3000/api/projects", {
-      cache: "no-store",
-    });
+export default function SelectProjects() {
+  const [options, setOptions] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(null);
 
-    if (!res.ok) {
-      throw new Error("Failed to fetch projects.");
+  // Fetch data when the component mounts
+  useEffect(() => {
+    fetchOptions();
+  }, []);
+
+  const fetchOptions = async () => {
+    try {
+      const res = await fetch("http://localhost:3000/api/projects", {
+        cache: "no-store",
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to fetch projects.");
+      }
+
+      const data = await res.json();
+      console.log("Data from API:", data);
+      setOptions(data); // Set the received data as options
+      console.log("Options state after setOptions:", options);
+    } catch (error) {
+      console.error("Error fetching options:", error);
     }
+  };
 
-    return res.json();
-  } catch (error) {
-    console.log("Error loading projects: ", error);
-  }
-}
+  const handleOptionChange = (e) => {
+    const selectedValue = e.target.value;
+    setSelectedOption(selectedValue); // Update selected option
+  };
 
-export default async function SelectProjects() {
-  const { projects } = await getProjects();
 
-  // Page content
   return (
     <div>
-      <select
-      onChange={(e) => setSelectedProjectId(e.target.value)}
-      value={selectedProjectId}
-      >
+      <select onChange={handleOptionChange}>
         <option value={null}>Sélectionner un projet</option>
-        {projects.map((project) => (
-          <option key={project.id} value={project.id}>
-            {project.name}
-          </option>
-        ))}
+        {Array.isArray(options) && options.length > 0 ? (
+          options.map((option) => (
+            <option key={option._id} value={option._id}>
+              {option.project_descr}
+            </option>
+          ))
+        ) : (
+          <option value={null}>Loading...</option>
+        )}
       </select>
-      {/* <DeleteBtn /> */}
+      {selectedOption && <DeleteBtn id={selectedOption} />}
     </div>
-  )
+  );
 }

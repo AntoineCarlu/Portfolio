@@ -25,6 +25,7 @@ export default function Dashboard() {
         <div className={styles.dashboard_div}>
           <h1>Project | Create</h1>
           <AddProject />
+          
           {/* <SelectProjects /> */}
         </div>
 
