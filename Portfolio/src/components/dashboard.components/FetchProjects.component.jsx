@@ -1,55 +1,48 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import DeleteBtn from "./DeleteProject.component";
 
-export default function SelectProjects() {
-  const [options, setOptions] = useState([]);
-  const [selectedOption, setSelectedOption] = useState(null);
+// Function to GET "Projects" from database
+const getProjects = async () => {
+  try {
+    const res = await fetch("http://localhost:3000/api/projects", {
+      cache: "no-store",
+    });
 
-  // Fetch data when the component mounts
-  useEffect(() => {
-    fetchOptions();
-  }, []);
-
-  const fetchOptions = async () => {
-    try {
-      const res = await fetch("http://localhost:3000/api/projects", {
-        cache: "no-store",
-      });
-
-      if (!res.ok) {
-        throw new Error("Failed to fetch projects.");
-      }
-
-      const data = await res.json();
-      console.log("Data from API:", data);
-      setOptions(data); // Set the received data as options
-      console.log("Options state after setOptions:", options);
-    } catch (error) {
-      console.error("Error fetching options:", error);
+    if (!res.ok) {
+      throw new Error("Failed to fetch projects.");
     }
-  };
 
-  const handleOptionChange = (e) => {
-    const selectedValue = e.target.value;
-    setSelectedOption(selectedValue); // Update selected option
-  };
+    return res.json();
+  } catch (error) {
+    console.log("Error loading projects: ", error);
+  }
+}
 
+export default function DeleteProjectsList() {
+  const [projects, setProjects] = useState([]);
+
+  //this useEffect use the "getProjects" async function to fetch the data into a "use-client" component
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const { projects } = await getProjects();
+        setProjects(projects);
+      } catch (error) {
+        console.error("Error fetching projects: ", error);
+      }
+    };
+
+    fetchProjects();
+  }, []);
 
   return (
     <div>
-      <select onChange={handleOptionChange}>
-        <option value={null}>Sélectionner un projet</option>
-        {Array.isArray(options) && options.length > 0 ? (
-          options.map((option) => (
-            <option key={option._id} value={option._id}>
-              {option.project_descr}
-            </option>
-          ))
-        ) : (
-          <option value={null}>Loading...</option>
-        )}
-      </select>
-      {selectedOption && <DeleteBtn id={selectedOption} />}
+      {projects.map((project) => (
+        <div key={project._id}>
+          <p>{project.project_descr}</p>
+          <DeleteBtn id={project._id} />
+        </div>
+      ))}
     </div>
   );
 }

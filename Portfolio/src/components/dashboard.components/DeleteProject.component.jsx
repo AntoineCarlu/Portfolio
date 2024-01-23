@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
-export default function DeleteBtn() {
+export default function DeleteBtn({ id }) {
   const router = useRouter();
 
   // Function to delete a "Project" from the database with confirmation

@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 import { useLayoutEffect } from 'react';
 import styles from './dashboard.module.css';
 import AddProject from '@/components/dashboard.components/AddProject.component';
-import SelectProjects from '@/components/dashboard.components/FetchProjects.component';
+import DeleteProjectsList from '@/components/dashboard.components/FetchProjects.component';
 
 export default function Dashboard() {
 
@@ -23,10 +23,9 @@ export default function Dashboard() {
       {isAuthenticated ? (
 
         <div className={styles.dashboard_div}>
-          <h1>Project | Create</h1>
+          <h1>Project | Create / Delete</h1>
           <AddProject />
-          
-          {/* <SelectProjects /> */}
+          <DeleteProjectsList />
         </div>
 
       ) : null}
