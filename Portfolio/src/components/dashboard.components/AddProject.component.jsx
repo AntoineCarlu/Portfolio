@@ -9,7 +9,9 @@ export default function AddProject() {
   const [project_descr, setProject_descr] = useState('');
 
   // Function to add news "Projects" with form element
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     if (!project_link || !project_img || !project_descr) {
       alert('Renseignez tous les champs.');
       return;
@@ -26,6 +28,9 @@ export default function AddProject() {
 
       if (res.ok) {
         console.log('Project created successfully.');
+        setProject_link('');
+        setProject_img('');
+        setProject_descr('');
       } else {
         throw new Error('Failed to create a new project.');
       }

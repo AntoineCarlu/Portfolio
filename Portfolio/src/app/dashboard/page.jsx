@@ -23,9 +23,9 @@ export default function Dashboard() {
       {isAuthenticated ? (
 
         <div className={styles.dashboard_div}>
-          <h1>Project | Create / Delete</h1>
+          <h1>Project | Create</h1>
           <AddProject />
-          <DeleteProjectsList />
+          {/* <DeleteProjectsList /> */}
         </div>
 
       ) : null}
