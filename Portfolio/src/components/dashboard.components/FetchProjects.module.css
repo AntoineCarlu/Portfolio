@@ -1,0 +1,15 @@
+.dashboard_list {
+  padding: 10px 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.dashboard_list div {
+  display: flex;
+  gap: 10px;
+}
+
+.dashboard_update div {
+  padding: 10px 10px 0;
+}

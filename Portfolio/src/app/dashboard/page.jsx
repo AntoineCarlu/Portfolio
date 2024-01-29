@@ -31,7 +31,7 @@ export default function Dashboard() {
 
           <div className={styles.dashboard_div}>
             <h2>Project | Update / Delete</h2>
-            <div className={styles.dashboard_delete}>
+            <div>
               <span onClick={() => setRenderProjectsList(!renderProjectsList)}>Cliquez pour voir la liste des projets</span>
               {renderProjectsList ? <DeleteProjectsList /> : ""}
             </div>

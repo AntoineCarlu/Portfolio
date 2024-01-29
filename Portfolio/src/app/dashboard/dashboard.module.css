@@ -52,15 +52,7 @@
 .dashboard_div button:hover {
   background-color: #3d9a54;
 }
-
-.dashboard_delete span {
+.dashboard_div span {
   text-decoration: underline;
   cursor: pointer;
-}
-.dashboard_delete div {
-  padding: 10px 10px 0 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
 }

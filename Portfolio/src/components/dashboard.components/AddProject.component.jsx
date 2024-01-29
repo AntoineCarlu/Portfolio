@@ -27,7 +27,7 @@ export default function AddProject() {
       });
 
       if (res.ok) {
-        alert('Project created successfully.');
+        alert('Projet créé !');
         setProject_link('');
         setProject_img('');
         setProject_descr('');

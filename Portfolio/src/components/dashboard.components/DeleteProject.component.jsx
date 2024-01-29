@@ -1,9 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-
 export default function DeleteBtn({ id }) {
-  const router = useRouter();
 
   // Function to delete a "Project" from the database with confirmation
   const deleteProject = async() => {
@@ -15,13 +12,13 @@ export default function DeleteBtn({ id }) {
       });
 
       if (res.ok) {
-        router.refresh();
+        alert('Projet supprimé !');
       }
     }
   };
 
   return (
-    <button onClick={deleteProject}>
+    <button onClick={deleteProject} style={{ background: '#e74c3c', ':hover': { background: '#c0392b' } }}>
       Delete
     </button>
   )
