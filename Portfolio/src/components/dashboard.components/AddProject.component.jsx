@@ -27,7 +27,7 @@ export default function AddProject() {
       });
 
       if (res.ok) {
-        console.log('Project created successfully.');
+        alert('Project created successfully.');
         setProject_link('');
         setProject_img('');
         setProject_descr('');

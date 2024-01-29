@@ -36,13 +36,13 @@ export default function DeleteProjectsList() {
   }, []);
 
   return (
-    <div>
+    <>
       {projects.map((project) => (
         <div key={project._id}>
           <p>{project.project_descr}</p>
-          <DeleteBtn id={project._id} />
+          <DeleteBtn id={project._id}/>
         </div>
       ))}
-    </div>
+    </>
   );
 }
