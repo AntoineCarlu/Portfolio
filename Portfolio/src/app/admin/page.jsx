@@ -9,6 +9,7 @@ export default function Admin() {
 
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const router = useRouter();
 
   const handleLogin = async (e) => {
@@ -27,13 +28,13 @@ export default function Admin() {
       if (res.ok) {
         setAuthentication(true);
         router.replace("dashboard");
-        console.log('Login réussi !');
+        console.log('Connexion réussie !');
       } else {
         const error = await res.json();
-        console.log('Login incorrect !', error.message);
+        setErrorMessage('Échec de la connexion : ' + error.message);
       }
     } catch (error) {
-      console.error('Error during login :', error);
+      setErrorMessage('Erreur lors de la connexion. Réessayez à nouveau.');
     }
   };
 
@@ -54,6 +55,7 @@ export default function Admin() {
           <br />
           <button type="submit">Valider</button>
         </form>
+        {errorMessage && <p>{errorMessage}</p>}
       </div>
     </main>
   );
