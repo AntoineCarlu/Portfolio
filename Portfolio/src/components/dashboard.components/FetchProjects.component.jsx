@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState, useEffect } from "react";
 import styles from './FetchProjects.module.css';
 import DeleteBtn from "./DeleteProject.component";
@@ -19,7 +20,7 @@ const getProjects = async () => {
   }
 }
 
-export default function DeleteProjectsList() {
+export default function ProjectsList() {
   const [projects, setProjects] = useState([]);
 
   //this useEffect use the "getProjects" async function to fetch the data into a "use-client" component
@@ -43,7 +44,7 @@ export default function DeleteProjectsList() {
           <div className={styles.dashboard_list}>
             <p>{project.project_descr}</p>
             <div>
-              <button>Update</button>
+              <Link href={`/dashboard/${project._id}`}>Update</Link>
               <DeleteBtn id={project._id}/>
             </div>
           </div>

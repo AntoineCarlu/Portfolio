@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 import { useState, useLayoutEffect } from 'react';
 import styles from './dashboard.module.css';
 import AddProject from '@/components/dashboard.components/AddProject.component';
-import DeleteProjectsList from '@/components/dashboard.components/FetchProjects.component';
+import ProjectsList from '@/components/dashboard.components/FetchProjects.component';
 
 export default function Dashboard() {
   const [renderProjectsList, setRenderProjectsList] = useState(false);
@@ -33,7 +33,7 @@ export default function Dashboard() {
             <h2>Project | Update / Delete</h2>
             <div>
               <span onClick={() => setRenderProjectsList(!renderProjectsList)}>Cliquez pour voir la liste des projets</span>
-              {renderProjectsList ? <DeleteProjectsList /> : ""}
+              {renderProjectsList ? <ProjectsList /> : ""}
             </div>
           </div>
         </div>
