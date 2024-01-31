@@ -18,8 +18,16 @@ export default function DeleteBtn({ id }) {
   };
 
   return (
-    <button onClick={deleteProject} style={{ background: '#e74c3c', ':hover': { background: '#c0392b' } }}>
+    <button className="delete_btn" onClick={deleteProject}>
       Delete
+      <style jsx>{`
+        .delete_btn {
+          background-color: #e74c3c;
+        }
+        .delete_btn:hover {
+          background-color: #c0392b;
+        }
+      `}</style>
     </button>
   )
 }

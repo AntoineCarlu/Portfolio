@@ -4,9 +4,9 @@ import { useState } from "react";
 
 export default function UpdateProject({ id, link, img, descr }) {
 
-  const [NewProject_link, setNewProject_link] = useState('link');
-  const [NewProject_img, setNewProject_img] = useState('img');
-  const [NewProject_descr, setNewProject_descr] = useState('descr');
+  const [NewProject_link, setNewProject_link] = useState(link);
+  const [NewProject_img, setNewProject_img] = useState(img);
+  const [NewProject_descr, setNewProject_descr] = useState(descr);
 
   // Function to UPDATE the "Post" selectionned
   const handleSubmit = async (e) => {
