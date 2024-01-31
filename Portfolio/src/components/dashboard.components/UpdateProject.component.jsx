@@ -10,6 +10,7 @@ export default function UpdateProject({ id, link, img, descr }) {
 
   // Function to UPDATE the "Post" selectionned
   const handleSubmit = async (e) => {
+    console.log('pressed');
     e.preventDefault();
 
     try {

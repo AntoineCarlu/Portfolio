@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 // Function to UPDATE "Projects" elements in the MongoDB database
 export async function PUT(request, { params }) {
   const { id } = params;
-  const { NewLink: project_link, NewImg: project_img, NewDescription: project_descr } = await request.json();
+  const { NewProject_link: project_link, NewProject_img: project_img, NewProject_descr: project_descr } = await request.json();
   await connectMongoDB();
   await Project.findByIdAndUpdate(id, { project_link, project_img, project_descr });
   return NextResponse.json({ message: "Project updated" }, { status: 200 });
