@@ -15,7 +15,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 100px;
+  gap: 50px;
 }
 .dashboard_div {
   padding: 20px;
@@ -68,4 +68,10 @@
 .dashboard_div span {
   text-decoration: underline;
   cursor: pointer;
+}
+
+@media all and (min-width: 800px) {
+  .dashboard_center {
+    gap: 100px;
+  }
 }

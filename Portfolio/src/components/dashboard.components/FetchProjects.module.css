@@ -5,7 +5,21 @@
   align-items: center;
   gap: 10px;
 }
+.dashboard_list p {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
 .dashboard_list div {
   display: flex;
   gap: 10px;
+}
+
+@media all and (max-width: 425px) {
+  .dashboard_list p {
+    font-size: 0.9em;
+  }
+  .dashboard_list div {
+    font-size: 0.75em;
+  }
 }
