@@ -21,12 +21,12 @@ const getProjectById = async (id) => {
 export default async function DashboardUpdate({ params }) {
   const { id } = params;
   const { project } = await getProjectById(id);
-  const { link, img, descr } = project;
+  const { project_link, project_img, project_descr } = project;
 
   return (
     <main className={styles.main}>
       <div className={styles.dashboard_center}>
-        <UpdateProject id={id} link={link} img={img} descr={descr} />
+        <UpdateProject id={id} link={project_link} img={project_img} descr={project_descr} />
       </div>
     </main>
   );
