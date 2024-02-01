@@ -12,9 +12,13 @@ export async function POST(request) {
 
 // Function to GET "Projects" datas elements from the MongoDB database
 export async function GET() {
-  await connectMongoDB();
-  const projects = await Project.find();
-  return NextResponse.json({ projects });
+  try {
+    await connectMongoDB();
+    const projects = await Project.find();
+    return NextResponse.json({ projects });
+  } catch (error) {
+    return NextResponse.json({ projects: [] });
+  }
 }
 
 // Function to DELETE "Projects" elements from the MongoDB database
