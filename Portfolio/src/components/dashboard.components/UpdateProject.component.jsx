@@ -9,9 +9,14 @@ export default function UpdateProject({ id, link, img, descr, langu }) {
   const [NewProject_descr, setNewProject_descr] = useState(descr);
   const [NewProject_langu, setNewProject_langu] = useState(langu);
 
-  // Function to UPDATE the "Post" selectionned
+  // Function to UPDATE the "Project" selectionned by id
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!NewProject_link || !NewProject_img || !NewProject_descr || !NewProject_langu) {
+      alert('Renseignez tous les champs.');
+      return;
+    }
 
     try {
       const res = await fetch(`http://localhost:3000/api/projects/${id}`, {
@@ -22,7 +27,13 @@ export default function UpdateProject({ id, link, img, descr, langu }) {
         body: JSON.stringify({ NewProject_link, NewProject_img, NewProject_descr, NewProject_langu }),
       });
 
-      if (!res.ok) {
+      if (res.ok) {
+        alert('Projet modifié !');
+        setNewProject_link('');
+        setNewProject_img('');
+        setNewProject_descr('');
+        setNewProject_langu('');
+      } else {
         throw new Error ("Failed to update project.");
       }
     } catch (error) {
