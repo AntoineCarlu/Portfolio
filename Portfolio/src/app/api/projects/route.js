@@ -4,9 +4,9 @@ import { NextResponse } from "next/server";
 
 // Function to POST datas from "Projects" schemas, into the MongoDB database
 export async function POST(request) {
-  const { project_link, project_img, project_descr } = await request.json();
+  const { project_link, project_img, project_descr, project_langu } = await request.json();
   await connectMongoDB();
-  await Project.create({ project_link, project_img, project_descr });
+  await Project.create({ project_link, project_img, project_descr, project_langu });
   return NextResponse.json({ message: "Project Created" }, { status: 201 });
 }
 

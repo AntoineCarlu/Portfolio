@@ -6,6 +6,7 @@ const projectSchema = new Schema (
     project_link: String,
     project_img: String,
     project_descr: String,
+    project_langu: String,
   }, 
   {
     timestamps: true,
