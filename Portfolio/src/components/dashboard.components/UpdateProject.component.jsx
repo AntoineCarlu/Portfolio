@@ -2,15 +2,15 @@
 
 import { useState } from "react";
 
-export default function UpdateProject({ id, link, img, descr }) {
+export default function UpdateProject({ id, link, img, descr, langu }) {
 
   const [NewProject_link, setNewProject_link] = useState(link);
   const [NewProject_img, setNewProject_img] = useState(img);
   const [NewProject_descr, setNewProject_descr] = useState(descr);
+  const [NewProject_langu, setNewProject_langu] = useState(langu);
 
   // Function to UPDATE the "Post" selectionned
   const handleSubmit = async (e) => {
-    console.log('pressed');
     e.preventDefault();
 
     try {
@@ -19,7 +19,7 @@ export default function UpdateProject({ id, link, img, descr }) {
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ NewProject_link, NewProject_img, NewProject_descr }),
+        body: JSON.stringify({ NewProject_link, NewProject_img, NewProject_descr, NewProject_langu }),
       });
 
       if (!res.ok) {
@@ -53,6 +53,13 @@ export default function UpdateProject({ id, link, img, descr }) {
           value={NewProject_descr}
           type="text"
           placeholder='Project description'
+        />
+
+        <input
+          onChange={(e) => setNewProject_langu(e.target.value)}
+          value={NewProject_langu}
+          type="text"
+          placeholder='Project languages'
         />
 
         <button type="submit">Update Project</button>

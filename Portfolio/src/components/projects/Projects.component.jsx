@@ -36,6 +36,7 @@ export default async function ProjectsList() {
           </Link>
           <div className={styles.box_text}>
             <p>{project.project_descr}</p>
+            <p>{project.project_langu}</p>
           </div>
         </div>
       ))}

@@ -7,12 +7,13 @@ export default function AddProject() {
   const [project_link, setProject_link] = useState('');
   const [project_img, setProject_img] = useState('');
   const [project_descr, setProject_descr] = useState('');
+  const [project_langu, setProject_langu] = useState('');
 
   // Function to add news "Projects" with form element
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!project_link || !project_img || !project_descr) {
+    if (!project_link || !project_img || !project_descr || !project_langu) {
       alert('Renseignez tous les champs.');
       return;
     }
@@ -23,7 +24,7 @@ export default function AddProject() {
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ project_link, project_img, project_descr }),
+        body: JSON.stringify({ project_link, project_img, project_descr, project_langu }),
       });
 
       if (res.ok) {
@@ -31,6 +32,7 @@ export default function AddProject() {
         setProject_link('');
         setProject_img('');
         setProject_descr('');
+        setProject_langu('');
       } else {
         throw new Error('Failed to create a new project.');
       }
@@ -60,6 +62,13 @@ export default function AddProject() {
         value={project_descr}
         type="text" 
         placeholder='Project description' 
+      />
+
+      <input
+        onChange={(e) => setProject_langu(e.target.value)}
+        value={project_langu}
+        type="text"
+        placeholder='Project languages'
       />
 
       <button type="submit">Create Project</button>
