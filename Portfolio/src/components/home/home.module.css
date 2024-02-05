@@ -48,7 +48,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid white;
+    border: 2px solid white;
+    border-radius: 15px;
+  }
+  .accueil_links div:hover {
+    border: 2.1px solid rgba(248, 13, 65);
+    opacity: 90%;
+    transition: all 0.3s ease-in-out;
   }
   /*imgs links*/
   .accueil_links .linImg {

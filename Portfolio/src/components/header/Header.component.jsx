@@ -5,16 +5,21 @@ import React, { useEffect, useState } from 'react';
 
 
 export default function Header() {
+  const [currentSection, setCurrentSection] = useState('home');
+  const [burgerCheck, setBurgerCheck] = useState(() => {
+    //get initial value from local storage or default to false
+    const storedValue = localStorage.getItem('burgerCheck');
+    return storedValue ? JSON.parse(storedValue) : false;
+  });
 
   // Script to display header nav-bar list when user click on the burger-menu icon
-  var burgerCheck = false;
   function burgerClicked() {
     //define elements
     const Line1 = document.getElementById('burger1');
     const Line2 = document.getElementById('burger2');
     const Line3 = document.getElementById('burger3');
     const navList = document.getElementById('nl');
-    if (burgerCheck === false) {
+    if (!burgerCheck) {
       //change visual of the burger icon
       Line1.style.width = "8px";
       Line1.style.borderColor = "rgba(248, 13, 65)";
@@ -24,9 +29,10 @@ export default function Header() {
       Line3.style.borderColor = "rgba(248, 13, 65)";
       //animation to display nav list
       navList.style.transform = "translateX(0%)";
-      burgerCheck = true;
+      setBurgerCheck(true);
+      localStorage.setItem('burgerCheck', JSON.stringify(true));
     }
-    else if (burgerCheck === true) {
+    else if (burgerCheck) {
       //change visual of the burger icon
       Line1.style.width = "30px";
       Line1.style.borderColor = "white";
@@ -36,15 +42,16 @@ export default function Header() {
       Line3.style.borderColor = "white";
       //animation to display nav list
       navList.style.transform = "translateX(100%)";
-      burgerCheck = false;
+      setBurgerCheck(false);
+      localStorage.setItem('burgerCheck', JSON.stringify(false));
     }
     else {
       throw new Error('Une erreur a été produite dans la liste de conditions.');
     }
   }
 
+  
   // Script to change the color of nav-bar anchors links if on corresponding section
-  const [currentSection, setCurrentSection] = useState('home');
   useEffect(() => {
     //function to check current section and give correct active class
     const CurrentSection = () => {
