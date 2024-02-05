@@ -11,7 +11,7 @@
   flex-direction: column;
 }
   .projectsFlex {
-    width: 80%;
+    width: 90%;
     height: fit-content;
 
     display: flex;
@@ -47,7 +47,7 @@
     /*description div*/
     .projectBox .box_text {
       width: 100%;
-      height: 60px;
+      height: 70px;
       text-align: center;
       background-color: rgba(33, 36, 40, 0.8);
 
@@ -58,7 +58,6 @@
       position: absolute;
       bottom: 0;
       z-index: 2;
-      transform: translateY(100%);
       transition: all 0.3s ease-in;
     }
     .projectBox .box_text p {
@@ -70,9 +69,6 @@
         width: 210px;
         height: 160px;
         border: 3.5px solid rgba(248, 13, 65);
-      }
-      .projectBox:hover .box_text {
-        transform: translateY(0%);
       }
 
 /* RESPONSIVE */
@@ -94,7 +90,7 @@
     height: 215px;
   }
 }
-@media all and (min-width: 520px) {
+@media all and (min-width: 900px) {
   .projects h1 {
     font-size: 32px;
   }
@@ -105,6 +101,7 @@
   }
   .projectBox .box_text {
     height: 75px;
+    transform: translateY(100%);
   }
   .projectBox .box_text p {
     font-size: 18px;
@@ -113,5 +110,8 @@
     margin: 10px;
     width: 370px;
     height: 320px;
+  }
+  .projectBox:hover .box_text {
+    transform: translateY(0%);
   }
 }

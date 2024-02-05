@@ -62,12 +62,6 @@
     }
 
 /* RESPONSIVE */
-@media all and (max-width: 320px) {
-  .header a {
-    font-size: 13px;
-  }
-}
-/*higher than mobile*/
 @media all and (min-width: 420px) {
   .header a {
     font-size: 20px;
