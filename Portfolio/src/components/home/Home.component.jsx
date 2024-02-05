@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import styles from './home.module.css';
 
 
@@ -14,9 +13,9 @@ export default function Accueil() {
       </div>
       <div className={styles.resumeText}>
         <p>
-          Passioné par la programmation et le développement Web, <br></br>
-          mon interêt et ma curiosité m’ont fait découvrir ce domaine en 2022. <br></br>
-          Depuis, j’ai découvert de nombreux languages et méthodes de développement et programmation Web lors de formations professionnelles ou découvertes personnelles.
+          Passionné par la programmation et le développement Web, <br></br>
+          mon intérêt et ma curiosité m’ont fait découvrir ce domaine en 2022. <br></br>
+          Depuis, j’ai découvert de nombreux langages et méthodes de développement et programmation Web lors de formations professionnelles ou découvertes personnelles.
         </p>
       </div>
       <div className={styles.resumeImage}>
