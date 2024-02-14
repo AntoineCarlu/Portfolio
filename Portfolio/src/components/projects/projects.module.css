@@ -121,3 +121,8 @@
     transform: translateY(0%);
   }
 }
+@media all and (min-width: 980px) {
+  .projectsFlex {
+    max-width: 1200px;
+  }
+}
