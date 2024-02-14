@@ -13,7 +13,7 @@
 }
   .profil h1 {
     margin: 10px;
-    font-size: 26px;
+    font-size: 28px;
   }
   /*Buttons select*/
   .profil .buttons_div {
@@ -42,7 +42,7 @@
 /*Size of elements*/
 @media all and (min-width: 520px) {
   .profil h1 {
-    font-size: 28px;
+    font-size: 30px;
   }
   .profil .buttons_div {
     width: 450px;
@@ -55,9 +55,6 @@
   }
 }
 @media all and (min-width: 720px) {
-  .profil h1 {
-    font-size: 30px;
-  }
   .profil .buttons_div {
     width: 600px;
   }

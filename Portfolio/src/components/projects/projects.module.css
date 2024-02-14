@@ -22,7 +22,7 @@
   }
   .projects h1 {
     margin: 10px;
-    font-size: 26px;
+    font-size: 28px;
   }
   /*The boxs*/
   .projectBox {
@@ -71,10 +71,16 @@
         border: 3.5px solid rgba(248, 13, 65);
       }
 
+  /*Animation for projects divs appearing in user viewport*/
+  .fade-in {
+    opacity: 0;
+    transition: all 1s ease;
+  }
+
 /* RESPONSIVE */
 @media all and (min-width: 380px) {
   .projects h1 {
-    font-size: 28px;
+    font-size: 30px;
   }
   .projectBox {
     margin: 15px;
