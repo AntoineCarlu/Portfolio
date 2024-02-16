@@ -1,5 +1,6 @@
 "use client"
 
+import ProfilSkills from './ProfilSkills.component';
 import styles from './profil.module.css';
 import React, { useState, useEffect } from 'react';
 
@@ -28,6 +29,9 @@ export default function Profil() {
         <button className={activeButton === 0 ? styles.activeButton : ''} onClick={() => profilButton(0)}>Compétences</button>
         <button className={activeButton === 1 ? styles.activeButton : ''} onClick={() => profilButton(1)}>Éducation</button>
         <button className={activeButton === 2 ? styles.activeButton : ''} onClick={() => profilButton(2)}>Expérience</button>
+      </div>
+      <div>
+        <ProfilSkills />
       </div>
     </section>
   );
