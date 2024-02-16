@@ -32,7 +32,7 @@ export default function Profil() {
         <button className={activeButton === 1 ? styles.activeButton : ''} onClick={() => profilButton(1)}>Éducation</button>
         <button className={activeButton === 2 ? styles.activeButton : ''} onClick={() => profilButton(2)}>Expérience</button>
       </div>
-      <div>
+      <div className={styles.profilComponents}>
         {activeButton === 0 && <ProfilSkills />}
         {activeButton === 1 && <ProfilEducation />}
         {activeButton === 2 && <ProfilExperience />}

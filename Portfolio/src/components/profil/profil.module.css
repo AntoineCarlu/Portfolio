@@ -1,4 +1,4 @@
-/*Positionnement*/
+/*Profil positionnement*/
 .profil {
   padding: 15px;
   padding-top: 70px;
@@ -15,9 +15,9 @@
     margin: 10px;
     font-size: 28px;
   }
-  /*Buttons select*/
+  /*buttons select*/
   .profil .buttons_div {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     width: 300px;
     height: 70px;
     background-color: rgba(25, 27, 30);
@@ -38,6 +38,62 @@
     .buttons_div .activeButton {
       border: 2px solid rgba(248, 13, 65);
     }
+
+.profilComponents {
+  width: 90%;
+  max-width: 1100px;
+}
+/* SKILLS */
+.skills {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+.skills .skillsP {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  .skillsP h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+  .skillsP ul { 
+    width: 300px;
+    opacity: 90%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+    .skillsP ul li {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .skillsP ul div {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+    }
+    .skillsP .c1,.c2,.c3 {
+      padding: 0 20px;
+      font-size: 0;
+      border: 2px solid white;
+      border-radius: 10px;
+    }
+    .skillsP .c1a {
+      padding: 0 20px;
+      font-size: 0;
+      border: 2px solid white;
+      border-radius: 10px;
+      background-color: red;
+    }
+
 
 /* RESPONSIVE */
 /*Size of elements*/
@@ -72,6 +128,13 @@
     width: 200px;
     font-size: 20px;
   }
+  .skills {
+    flex-direction: row;
+    gap: 0;
+  }
+  .skills ul div {
+    gap: 10px;
+  }
 }
 @media all and (min-width: 980px) {
   .profil h1 {
@@ -83,5 +146,8 @@
   .buttons_div button {
     width: 300px;
     font-size: 22px;
+  }
+  .skillsP ul {
+    width: 400px;
   }
 }
