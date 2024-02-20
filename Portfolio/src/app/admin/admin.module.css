@@ -1,6 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic);
+
 .main {
   width: 100%;
   min-height: 100vh;
+  font-family: IBM Plex Sans;
   color: white;
   background-color: #212428;
 
