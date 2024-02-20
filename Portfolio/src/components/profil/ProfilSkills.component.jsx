@@ -1,7 +1,6 @@
 import styles from './profil.module.css';
 
 export default function ProfilSkills() {
-  const text = "active";
 
   return (
     <div className={styles.skills}>
@@ -9,12 +8,22 @@ export default function ProfilSkills() {
         <h3>Hard Skills</h3>
         <ul>
           <li>
-            <p>HTML5 / CSS3</p>
-            <div><span className={text.includes("active") ? styles.c1a : styles.c1}></span><span className={styles.c2}></span><span className={styles.c3}></span></div>
+            <div className={styles.infos}>
+              <p>HTML5 / CSS3</p>
+              <p>75%</p>
+            </div>
+            <div className={styles.pourcent}>
+              <div className={styles.pourcentC}></div>
+            </div>
           </li>
           <li>
-            <p>JavaScript</p>
-            <div><span className={styles.c1}></span><span className={styles.c2}></span><span className={styles.c3}></span></div>
+            <div className={styles.infos}>
+              <p>JavaScript</p>
+              <p>100%</p>
+            </div>
+            <div className={styles.pourcent}>
+              <div className={styles.pourcentC}></div>
+            </div>
           </li>
           <p>Next.js</p>
           <p>React</p>
