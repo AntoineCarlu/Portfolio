@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import styles from './profil.module.css';
 
-// Function to GET "Skills" from database and fetch each of them in the page
-const getSkills = async () => {
+// Function to GET "Skills" from database and fetch each of them in the page with a filter system
+const getSkills = async (category) => {
   try {
     const res = await fetch("http://localhost:3000/api/skills", {
       cache: "no-store",
@@ -12,19 +12,26 @@ const getSkills = async () => {
       throw new Error("Failed to fetch skills.");
     }
 
-    return res.json();
+    const data = await res.json();
+    return data.skills.filter(skill => skill.skill_category === category);
   } catch (error) {
     console.log("Error loading skills: ", error);
+    return [];
   }
 }
 
 export default function ProfilSkills() {
-  const [skills, setSkills] = useState([]);
+  const [hardSkills, setHardSkills] = useState([]);
+  const [softSkills, setSoftSkills] = useState([]);
 
   useEffect(() => {
     const fetchSkills = async () => {
-      const data = await getSkills();
-      setSkills(data.skills || []);
+      //filter and split the data for two fetchs
+      const hardSkillsData = await getSkills("hard");
+      const softSkillsData = await getSkills("soft");
+
+      setHardSkills(hardSkillsData || []);
+      setSoftSkills(softSkillsData || []);
     };
 
     fetchSkills();
@@ -35,7 +42,7 @@ export default function ProfilSkills() {
       <div className={styles.skillsP}>
         <h3>Hard Skills</h3>
         <ul>
-          {skills.map((skill) => (
+          {hardSkills.map((skill) => (
             <li key={skill.id}>
               <div className={styles.infos}>
                 <p>{skill.skill_name}</p>
@@ -51,7 +58,7 @@ export default function ProfilSkills() {
       <div className={styles.skillsP}>
         <h3>Soft Skills</h3>
         <ul>
-          {skills.map((skill) => (
+          {softSkills.map((skill) => (
             <li key={skill.id}>
               <div className={styles.infos}>
                 <p>{skill.skill_name}</p>
