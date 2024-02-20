@@ -33,7 +33,7 @@ export default function ProjectsList() {
     fetchProjects();
   }, []);
 
-  //Function to have a fade animation when projects divs appears in user viewport
+  // Function to have a fade animation when projects divs appears in user viewport
   useEffect(() => {
     const projectsAnimation = () => {
       const elements = document.querySelectorAll('.fade-in');

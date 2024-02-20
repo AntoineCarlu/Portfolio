@@ -72,7 +72,7 @@
   .skillsP ul li {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 3px;
   }
     .skillsP .infos {
       width: 100%;
