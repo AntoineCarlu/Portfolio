@@ -6,6 +6,7 @@ import { useState, useLayoutEffect } from 'react';
 import styles from './dashboard.module.css';
 import AddProject from '@/components/dashboard.components/AddProject.component';
 import ProjectsList from '@/components/dashboard.components/FetchProjects.component';
+import AddSkill from '@/components/dashboard.components/AddSkill.component';
 
 export default function Dashboard() {
   const [renderProjectsList, setRenderProjectsList] = useState(false);
@@ -35,6 +36,11 @@ export default function Dashboard() {
               <span onClick={() => setRenderProjectsList(!renderProjectsList)}>Cliquez pour voir la liste des projets</span>
               {renderProjectsList ? <ProjectsList /> : ""}
             </div>
+          </div>
+
+          <div className={styles.dashboard_div}>
+            <h2>Skill | Create</h2>
+            <AddSkill />
           </div>
         </div>
 
