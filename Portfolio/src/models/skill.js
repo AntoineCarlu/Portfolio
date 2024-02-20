@@ -5,6 +5,7 @@ const skillSchema = new Schema (
   {
     skill_name: String,
     skill_pourcent: String,
+    skill_category: String,
   }, 
   {
     timestamps: true,
