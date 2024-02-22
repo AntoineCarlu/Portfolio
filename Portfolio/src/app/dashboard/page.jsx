@@ -7,9 +7,11 @@ import styles from './dashboard.module.css';
 import AddProject from '@/components/dashboard.components/AddProject.component';
 import ProjectsList from '@/components/dashboard.components/FetchProjects.component';
 import AddSkill from '@/components/dashboard.components/AddSkill.component';
+import SkillsList from '@/components/dashboard.components/FetchSkills.component';
 
 export default function Dashboard() {
   const [renderProjectsList, setRenderProjectsList] = useState(false);
+  const [renderSkillsList, setRenderSkillsList] = useState(false);
 
   // Function to protect the route to being access by unauthorized user
   useLayoutEffect(() => { 
@@ -41,6 +43,14 @@ export default function Dashboard() {
           <div className={styles.dashboard_div}>
             <h2>Skill | Create</h2>
             <AddSkill />
+          </div>
+
+          <div className={styles.dashboard_div}>
+            <h2>Skill | Update / Delete</h2>
+            <div>
+              <span onClick={() => setRenderSkillsList(!renderSkillsList)}>Cliquez pour voir la liste des compétences</span>
+              {renderSkillsList ? <SkillsList /> : ""}
+            </div>
           </div>
         </div>
 

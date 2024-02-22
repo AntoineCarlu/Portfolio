@@ -1,6 +1,6 @@
 "use client";
 
-export default function DeleteBtn({ id }) {
+export default function DeleteProjectBtn({ id }) {
 
   // Function to delete a "Project" from the database with confirmation
   const deleteProject = async() => {
