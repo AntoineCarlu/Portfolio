@@ -49,7 +49,7 @@ export default function ProfilSkills() {
                 <p>{skill.skill_pourcent}</p>
               </div>
               <div className={styles.pourcent}>
-                <div className={styles.pourcentC}></div>
+                <div className={styles.pourcentC} style={{ width: skill.skill_pourcent }}></div>
               </div>
             </li>
           ))}
@@ -65,7 +65,7 @@ export default function ProfilSkills() {
                 <p>{skill.skill_pourcent}</p>
               </div>
               <div className={styles.pourcent}>
-                <div className={styles.pourcentC}></div>
+                <div className={styles.pourcentC} style={{ width: skill.skill_pourcent }}></div>
               </div>
             </li>
           ))}
