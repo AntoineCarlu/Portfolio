@@ -9,7 +9,7 @@ export default function ProfilSkills() {
 
   // Function to GET "Skills" from database and fetch each of them in the page with a filter system
   useEffect(() => {
-    const getSkills = async (category) => {
+    const getSkills = async () => {
       try {
         const res = await fetch("http://localhost:3000/api/skills", {
           cache: "no-store",
