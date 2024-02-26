@@ -3,10 +3,13 @@
 import { useState } from "react";
 
 export default function AddData({ fields }) {
+  //remove the first element from the inputs form
   const inputFields = fields.filter(field => field !== fields[0]);
+  //initialize the inputs as empty
   const initialState = Object.fromEntries(inputFields.map(field => [field, '']));
   const [formData, setFormData] = useState(initialState);
 
+  //update the values of the inputs directly
   const handleChange = (e, field) => {
     setFormData({
       ...formData,
@@ -14,15 +17,18 @@ export default function AddData({ fields }) {
     });
   };
 
+  //handle the submission of the form with some conditions and events
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    //prevent the creation of the data if some inputs are empty
     const missingFields = inputFields.filter(field => !formData[field]);
     if (missingFields.length > 0) {
       alert('Renseignez tous les champs.');
       return;
     }
 
+    //create the data if everything is ok
     try {
       const res = await fetch(`http://localhost:3000/api/${fields[0]}s`, {
         method: 'POST',
@@ -43,6 +49,7 @@ export default function AddData({ fields }) {
     }
   };
 
+  //page content
   return (
     <form onSubmit={handleSubmit}>
       {inputFields.map(field => (
