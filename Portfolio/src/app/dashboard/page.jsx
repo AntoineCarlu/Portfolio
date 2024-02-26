@@ -33,7 +33,7 @@ export default function Dashboard() {
           </div>
 
           <div className={styles.dashboard_div}>
-            <h2>Project | Update / Delete</h2>
+            <h2>Projects | Update / Delete</h2>
             <div>
               <span onClick={() => setRenderProjectsList(!renderProjectsList)}>Cliquez pour voir la liste des projets</span>
               {renderProjectsList ? <ProjectsList /> : ""}
@@ -46,7 +46,7 @@ export default function Dashboard() {
           </div>
 
           <div className={styles.dashboard_div}>
-            <h2>Skill | Update / Delete</h2>
+            <h2>Skills | Update / Delete</h2>
             <div>
               <span onClick={() => setRenderSkillsList(!renderSkillsList)}>Cliquez pour voir la liste des compétences</span>
               {renderSkillsList ? <SkillsList /> : ""}

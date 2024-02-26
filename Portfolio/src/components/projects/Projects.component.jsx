@@ -24,11 +24,13 @@ const getProjects = async () => {
 
 export default function ProjectsList() {
   const [projects, setProjects] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchProjects = async () => {
       const data = await getProjects();
       setProjects(data.projects || []);
+      setIsLoading(false);
     };
 
     fetchProjects();
@@ -61,6 +63,12 @@ export default function ProjectsList() {
   }, []);
 
   // Page content
+  if (isLoading) return (
+    <section className={styles.projects} id="Projects">
+      <h1><u>Mes Projets</u></h1>
+      <div className={styles.projectsFlex}>Récupération des données...</div>
+    </section>
+  )
   return (
     <section className={styles.projects} id="Projects">
       <h1><u>Mes Projets</u></h1>

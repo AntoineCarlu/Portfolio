@@ -23,6 +23,7 @@ const getSkills = async (category) => {
 export default function ProfilSkills() {
   const [hardSkills, setHardSkills] = useState([]);
   const [softSkills, setSoftSkills] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchSkills = async () => {
@@ -32,11 +33,13 @@ export default function ProfilSkills() {
 
       setHardSkills(hardSkillsData || []);
       setSoftSkills(softSkillsData || []);
+      setIsLoading(false);
     };
 
     fetchSkills();
   }, []);
-
+  
+  if (isLoading) return <div>Récupération des données...</div>;
   return (
     <div className={styles.skills}>
       <div className={styles.skillsP}>
