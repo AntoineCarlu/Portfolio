@@ -15,6 +15,7 @@
 .dashboard_center {
   padding: 25px 10px;
   width: 100%;
+  max-width: 900px;
   display: flex;
   justify-content: center;
   align-items: center;
