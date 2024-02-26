@@ -1,45 +1,53 @@
 import { useEffect, useState } from 'react';
 import styles from './profil.module.css';
 
-// Function to GET "Skills" from database and fetch each of them in the page with a filter system
-const getSkills = async (category) => {
-  try {
-    const res = await fetch("http://localhost:3000/api/skills", {
-      cache: "no-store",
-    });
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch skills.");
-    }
-
-    const data = await res.json();
-    return data.skills.filter(skill => skill.skill_category === category);
-  } catch (error) {
-    console.log("Error loading skills: ", error);
-    return [];
-  }
-}
-
 export default function ProfilSkills() {
   const [hardSkills, setHardSkills] = useState([]);
   const [softSkills, setSoftSkills] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
+  // Function to GET "Skills" from database and fetch each of them in the page with a filter system
   useEffect(() => {
-    const fetchSkills = async () => {
-      //filter and split the data for two fetchs
-      const hardSkillsData = await getSkills("hard");
-      const softSkillsData = await getSkills("soft");
+    const getSkills = async (category) => {
+      try {
+        const res = await fetch("http://localhost:3000/api/skills", {
+          cache: "no-store",
+        });
 
-      setHardSkills(hardSkillsData || []);
-      setSoftSkills(softSkillsData || []);
-      setIsLoading(false);
-    };
+        if (!res.ok) {
+          throw new Error("Failed to fetch skills.");
+        }
 
-    fetchSkills();
+        //filter and split the data for two fetchs
+        const data = await res.json();
+        //Check if the fetched data is empty
+        if (!data || !data.skills || data.skills.length === 0) {
+          setHardSkills([]);
+          setSoftSkills([]);
+          setIsError(true);
+        } else {
+          const hardSkillsData = data.skills.filter(skill => skill.skill_category === "hard");
+          const softSkillsData = data.skills.filter(skill => skill.skill_category === "soft");
+          setHardSkills(hardSkillsData);
+          setSoftSkills(softSkillsData);
+        }
+        setIsLoading(false);
+      } catch (error) {
+        console.log("Error loading skills: ", error);
+        setIsError(true);
+        setIsLoading(false);
+        setHardSkills([]);
+        setSoftSkills([]);
+      }
+    }
+
+    getSkills();
   }, []);
   
-  if (isLoading) return <div>Récupération des données...</div>;
+  // Page content
+  if (isLoading) return <div className={styles.skills}>Récupération des données...</div>;
+  if (isError) return <div className={styles.skills}>Erreur lors de la récupération des données.</div>;
   return (
     <div className={styles.skills}>
       <div className={styles.skillsP}>

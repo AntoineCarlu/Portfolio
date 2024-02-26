@@ -4,36 +4,41 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from './projects.module.css'
 
-// Function to GET "Projects" from database and fetch each of them in the page
-const getProjects = async () => {
-  try {
-    const res = await fetch("http://localhost:3000/api/projects", {
-      cache: "no-store",
-    });
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch projects.");
-    }
-
-    return res.json();
-  } catch (error) {
-    console.log("Error loading projects: ", error);
-    return [];
-  }
-}
-
 export default function ProjectsList() {
   const [projects, setProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
+  // Function to GET "Projects" from database and fetch each of them in the page
   useEffect(() => {
-    const fetchProjects = async () => {
-      const data = await getProjects();
-      setProjects(data.projects || []);
-      setIsLoading(false);
-    };
+    const getProjects = async () => {
+      try {
+        const res = await fetch("http://localhost:3000/api/projects", {
+          cache: "no-store",
+        });
 
-    fetchProjects();
+        if (!res.ok) {
+          throw new Error("Failed to fetch projects.");
+        }
+
+        const data = await res.json();
+        //Check if the fetched data is empty
+        if (!data || !data.projects || data.projects.length === 0) {
+          setProjects([]);
+          setIsError(true);
+        } else {
+          setProjects(data.projects);
+        }
+        setIsLoading(false);
+      } catch (error) {
+        console.log("Error loading projects: ", error);
+        setIsError(true);
+        setIsLoading(false);
+        setProjects([]);
+      }
+    }
+
+    getProjects();
   }, []);
 
   // Function to have a fade animation when projects divs appears in user viewport
@@ -69,6 +74,14 @@ export default function ProjectsList() {
       <div className={styles.projectsFlex}>Récupération des données...</div>
     </section>
   )
+
+  if (isError) return (
+    <section className={styles.projects} id="Projects">
+      <h1><u>Mes Projets</u></h1>
+      <div className={styles.projectsFlex}>Erreur lors de la récupération des données.</div>
+    </section>
+  )
+
   return (
     <section className={styles.projects} id="Projects">
       <h1><u>Mes Projets</u></h1>
