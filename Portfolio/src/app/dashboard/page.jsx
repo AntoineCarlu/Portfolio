@@ -4,9 +4,9 @@ import { isAuthenticated } from '@/libs/auth';
 import { redirect } from 'next/navigation';
 import { useState, useLayoutEffect } from 'react';
 import styles from './dashboard.module.css';
+import AddData from '@/components/dashboard.components/AddData.component';
 import ProjectsList from '@/components/dashboard.components/FetchProjects.component';
 import SkillsList from '@/components/dashboard.components/FetchSkills.component';
-import AddData from '@/components/dashboard.components/AddData.component';
 
 export default function Dashboard() {
   const [renderProjectsList, setRenderProjectsList] = useState(false);

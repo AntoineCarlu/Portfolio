@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from "react";
 import styles from './FetchList.module.css';
-import DeleteSkillBtn from "./DeleteSkill.component";
+import DeleteDataBtn from "./DeleteData.component";
 
 // Function to GET "Skills" from database
 const getSkills = async () => {
@@ -45,7 +45,7 @@ export default function SkillsList() {
             <p>{skill.skill_name}</p>
             <div>
               <Link href={`/dashboard/${skill._id}`}>Update</Link>
-              <DeleteSkillBtn id={skill._id}/>
+              <DeleteDataBtn id={skill._id} type="skill" />
             </div>
           </div>
         </div>

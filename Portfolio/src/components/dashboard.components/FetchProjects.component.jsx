@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from "react";
 import styles from './FetchList.module.css';
-import DeleteProjectBtn from "./DeleteProject.component";
+import DeleteDataBtn from "./DeleteData.component";
 
 // Function to GET "Projects" from database
 const getProjects = async () => {
@@ -45,7 +45,7 @@ export default function ProjectsList() {
             <p>{project.project_descr}</p>
             <div>
               <Link href={`/dashboard/${project._id}`}>Update</Link>
-              <DeleteProjectBtn id={project._id}/>
+              <DeleteDataBtn id={project._id} type="project" />
             </div>
           </div>
         </div>
