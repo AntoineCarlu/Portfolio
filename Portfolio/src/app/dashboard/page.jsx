@@ -4,12 +4,9 @@ import { isAuthenticated } from '@/libs/auth';
 import { redirect } from 'next/navigation';
 import { useState, useLayoutEffect } from 'react';
 import styles from './dashboard.module.css';
-import AddProject from '@/components/dashboard.components/AddProject.component';
 import ProjectsList from '@/components/dashboard.components/FetchProjects.component';
-import AddSkill from '@/components/dashboard.components/AddSkill.component';
 import SkillsList from '@/components/dashboard.components/FetchSkills.component';
-import AddEducation from '@/components/dashboard.components/AddEducation.component';
-import AddExperience from '@/components/dashboard.components/AddExperience.component';
+import AddData from '@/components/dashboard.components/AddData.component';
 
 export default function Dashboard() {
   const [renderProjectsList, setRenderProjectsList] = useState(false);
@@ -31,7 +28,7 @@ export default function Dashboard() {
         <div className={styles.dashboard_center}>
           <div className={styles.dashboard_div}>
             <h2>Project | Create</h2>
-            <AddProject />
+            <AddData fields={['project', 'project_link', 'project_img', 'project_descr', 'project_langu']} />
           </div>
 
           <div className={styles.dashboard_div}>
@@ -44,7 +41,7 @@ export default function Dashboard() {
 
           <div className={styles.dashboard_div}>
             <h2>Skill | Create</h2>
-            <AddSkill />
+            <AddData fields={['skill', 'skill_name', 'skill_pourcent', 'skill_category']} />
           </div>
 
           <div className={styles.dashboard_div}>
@@ -57,12 +54,12 @@ export default function Dashboard() {
 
           <div className={styles.dashboard_div}>
             <h2>Education | Create</h2>
-            <AddEducation />
+            <AddData fields={['education', 'education_title', 'education_infos', 'education_descr', 'education_date']} />
           </div>
 
           <div className={styles.dashboard_div}>
             <h2>Experience | Create</h2>
-            <AddExperience />
+            <AddData fields={['experience', 'experience_title', 'experience_infos', 'experience_descr', 'experience_date']} />
           </div>
         </div>
 
