@@ -42,8 +42,48 @@ export default function ProfilEducation() {
   if (isLoading) return <div className={styles.ee}>Récupération des données...</div>;
   if (isError) return <div className={styles.ee}>Erreur lors de la récupération des données.</div>;
   return (
-    <div className={styles.ee}>
-      
+    <div className={styles.eeCenter}>
+
+      <div className={styles.row}>
+        <div className={styles.item}>
+          <div className={styles.infosBloc}>
+            <h2>Title</h2>
+            <span>infos</span>
+            <p>descr</p>
+          </div>
+          <p className={styles.date}>date</p>
+        </div>
+        <div className={styles.item}>
+          <div className={styles.infosBloc}>
+            <h2>Title</h2>
+            <span>infos</span>
+            <p>descr</p>
+          </div>
+          <p className={styles.date}>date</p>
+        </div>
+        <div className={styles.item}>
+          <div className={styles.infosBloc}>
+            <h2>Title</h2>
+            <span>infos</span>
+            <p>descr</p>
+          </div>
+          <p className={styles.date}>date</p>
+        </div>
+        <div className={styles.item}>
+          <div className={styles.infosBloc}>
+            <h2>Title</h2>
+            <span>infos</span>
+            <p>descr</p>
+          </div>
+          <p className={styles.date}>date</p>
+        </div>
+      </div>
+
+      <div className={styles.arrowL}></div>
+      <div className={styles.arrowR}></div>
+
+      <div className={styles.line}></div>
+
     </div>
   )
 }
