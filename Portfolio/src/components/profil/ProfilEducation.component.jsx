@@ -45,42 +45,20 @@ export default function ProfilEducation() {
     <div className={styles.eeCenter}>
 
       <div className={styles.eeRow}>
-        <div className={styles.eeBloc}>
-          <div className={styles.eeInfos}>
-            <h2>Title</h2>
-            <span>infos</span>
-            <p>descr</p>
+        {educations.map((education) => (
+          <div key={education.id} className={styles.eeBloc}>
+            <div className={styles.eeInfos}>
+              <h2>{education.education_title}</h2>
+              <span>{education.education_infos}</span>
+              <p>{education.education_descr}</p>
+            </div>
+            <p className={styles.eeDate}>{education.education_date}</p>
           </div>
-          <p className={styles.eeDate}>date</p>
-        </div>
-        <div className={styles.eeBloc}>
-          <div className={styles.eeInfos}>
-            <h2>Title</h2>
-            <span>infos</span>
-            <p>descr</p>
-          </div>
-          <p className={styles.eeDate}>date</p>
-        </div>
-        <div className={styles.eeBloc}>
-          <div className={styles.eeInfos}>
-            <h2>Title</h2>
-            <span>infos</span>
-            <p>descr</p>
-          </div>
-          <p className={styles.eeDate}>date</p>
-        </div>
-        <div className={styles.eeBloc}>
-          <div className={styles.eeInfos}>
-            <h2>Title</h2>
-            <span>infos</span>
-            <p>descr</p>
-          </div>
-          <p className={styles.eeDate}>date</p>
-        </div>
+        ))}
       </div>
 
-      <div className={styles.arrowL}></div>
-      <div className={styles.arrowR}></div>
+      {/* <div className={styles.arrowL}></div>
+      <div className={styles.arrowR}></div> */}
 
       <div className={styles.eeLine}></div>
 

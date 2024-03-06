@@ -42,8 +42,26 @@ export default function ProfilExperience() {
   if (isLoading) return <div className={styles.ee}>Récupération des données...</div>;
   if (isError) return <div className={styles.ee}>Erreur lors de la récupération des données.</div>;
   return (
-    <div className={styles.ee}>
-      
+    <div className={styles.eeCenter}>
+
+      <div className={styles.eeRow}>
+        {experiences.map((experience) => (
+          <div key={experience.id} className={styles.eeBloc}>
+            <div className={styles.eeInfos}>
+              <h2>{experience.experience_title}</h2>
+              <span>{experience.experience_infos}</span>
+              <p>{experience.experience_descr}</p>
+            </div>
+            <p className={styles.eeDate}>{experience.experience_date}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* <div className={styles.arrowL}></div>
+      <div className={styles.arrowR}></div> */}
+
+      <div className={styles.eeLine}></div>
+
     </div>
   )
 }
