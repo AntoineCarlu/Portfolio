@@ -44,45 +44,45 @@ export default function ProfilEducation() {
   return (
     <div className={styles.eeCenter}>
 
-      <div className={styles.row}>
-        <div className={styles.item}>
-          <div className={styles.infosBloc}>
+      <div className={styles.eeRow}>
+        <div className={styles.eeBloc}>
+          <div className={styles.eeInfos}>
             <h2>Title</h2>
             <span>infos</span>
             <p>descr</p>
           </div>
-          <p className={styles.date}>date</p>
+          <p className={styles.eeDate}>date</p>
         </div>
-        <div className={styles.item}>
-          <div className={styles.infosBloc}>
+        <div className={styles.eeBloc}>
+          <div className={styles.eeInfos}>
             <h2>Title</h2>
             <span>infos</span>
             <p>descr</p>
           </div>
-          <p className={styles.date}>date</p>
+          <p className={styles.eeDate}>date</p>
         </div>
-        <div className={styles.item}>
-          <div className={styles.infosBloc}>
+        <div className={styles.eeBloc}>
+          <div className={styles.eeInfos}>
             <h2>Title</h2>
             <span>infos</span>
             <p>descr</p>
           </div>
-          <p className={styles.date}>date</p>
+          <p className={styles.eeDate}>date</p>
         </div>
-        <div className={styles.item}>
-          <div className={styles.infosBloc}>
+        <div className={styles.eeBloc}>
+          <div className={styles.eeInfos}>
             <h2>Title</h2>
             <span>infos</span>
             <p>descr</p>
           </div>
-          <p className={styles.date}>date</p>
+          <p className={styles.eeDate}>date</p>
         </div>
       </div>
 
       <div className={styles.arrowL}></div>
       <div className={styles.arrowR}></div>
 
-      <div className={styles.line}></div>
+      <div className={styles.eeLine}></div>
 
     </div>
   )
