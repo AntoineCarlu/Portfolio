@@ -41,11 +41,14 @@
 
 .profilComponents {
   width: 90%;
-  max-width: 1100px;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
 }
 /* SKILLS */
 .skills {
   width: 100%;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -119,7 +122,7 @@
   align-items: center;
 }
 .eeInfos {
-  padding: 10px 15px;
+  padding: 10px 15px 15px;
   width: 250px;
   min-height: 250px;
   height: 100%;
@@ -156,10 +159,10 @@
     content: '';
     position: absolute;
     top: -4px;
-    right: -4px;
+    left: -4px;
     border-style: solid;
-    border-width: 7px 0 7px 10px;
-    border-color: transparent transparent transparent rgba(248, 13, 65);
+    border-width: 7px 10px 7px 0;
+    border-color: transparent rgba(248, 13, 65) transparent transparent;
   }
 
 .arrowLeft, .arrowRight {
@@ -226,13 +229,12 @@
   .skills ul div {
     gap: 10px;
   }
-}
-@media all and (min-width: 900px) {
   .eeRow {
-    width: 660px;
+    width: 370px;
   }
-  .eeBloc {
-    margin: 0 15px;
+  .eeInfos {
+    width: 350px;
+    min-height: 300px;
   }
 }
 @media all and (min-width: 980px) {
@@ -249,9 +251,15 @@
   .skillsP ul {
     width: 400px;
   }
+  .eeRow {
+    width: 760px;
+  }
+  .eeBloc {
+    margin: 0 15px;
+  }
 }
 @media all and (min-width: 1200px) {
   .eeRow {
-    width: 990px;
+    width: 1140px;
   }
 }
