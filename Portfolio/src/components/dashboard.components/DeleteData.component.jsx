@@ -12,7 +12,7 @@ export default function DeleteDataBtn({ id, type, name }) {
       });
 
       if (res.ok) {
-        alert(`${type} deleted !`);
+        alert(`"${name}" supprimé !`);
       }
     }
   };
