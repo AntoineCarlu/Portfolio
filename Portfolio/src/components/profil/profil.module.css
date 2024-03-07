@@ -98,26 +98,32 @@
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  position: relative;
+}
+.eeRowCenter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .eeRow {
-  width: 90%;
+  width: 260px;
   display: flex;
-  /* flex-direction: row-reverse; */
-  gap: 30px;
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 .eeBloc {
+  margin: 0 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .eeInfos {
   padding: 10px 15px;
-  width: 300px;
+  width: 250px;
   height: 250px;
   background-color: rgba(25, 27, 30);
   border-radius: 10px;
+
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -133,6 +139,7 @@
 .eeDate {
   padding: 5px 0;
   color: rgba(248, 13, 65);
+  opacity: 95%;
 }
 .eeLine {
   width: 100%;
@@ -140,6 +147,18 @@
   background-color: rgba(248, 13, 65);
   border-radius: 2px;
 }
+.arrowLeft, .arrowRight {
+  margin-bottom: 31px;
+  border-style: solid;
+}
+  .arrowLeft {
+    border-width: 15px 20px 15px 0;
+    border-color: transparent rgba(25, 27, 30) transparent transparent;
+  }
+  .arrowRight {
+    border-width: 15px 0 15px 20px;
+    border-color: transparent transparent transparent rgba(25, 27, 30);
+  }
 
 /* RESPONSIVE */
 /*Size of elements*/
@@ -165,6 +184,15 @@
     height: 80px;
     font-size: 18px;
   }
+  .eeRow {
+    width: 320px;
+  }
+  .eeBloc {
+    margin: 0 10px;
+  }
+  .eeInfos {
+    width: 300px;
+  }
 }
 @media all and (min-width: 720px) {
   .profil .buttons_div {
@@ -182,6 +210,14 @@
     gap: 10px;
   }
 }
+@media all and (min-width: 900px) {
+  .eeRow {
+    width: 660px;
+  }
+  .eeBloc {
+    margin: 0 15px;
+  }
+}
 @media all and (min-width: 980px) {
   .profil h1 {
     font-size: 32px;
@@ -195,5 +231,10 @@
   }
   .skillsP ul {
     width: 400px;
+  }
+}
+@media all and (min-width: 1200px) {
+  .eeRow {
+    width: 990px;
   }
 }

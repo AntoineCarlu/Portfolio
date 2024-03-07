@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styles from './profil.module.css';
 
 export default function ProfilExperience() {
   const [experiences, setExperiences] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+  const carouselRef = useRef(null);
 
   // Function to GET "Experiences" from database and fetch each of them in the page
   useEffect(() => {
@@ -37,6 +38,18 @@ export default function ProfilExperience() {
 
     getExperiences();
   }, []);
+
+  // Functions to scroll the carousel
+  const scrollCarouselLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollLeft -= carouselRef.current.offsetWidth;
+    }
+  };
+  const scrollCarouselRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollLeft += carouselRef.current.offsetWidth;
+    }
+  };
   
   // Page content
   if (isLoading) return <div className={styles.ee}>Récupération des données...</div>;
@@ -44,24 +57,25 @@ export default function ProfilExperience() {
   return (
     <div className={styles.eeCenter}>
 
-      <div className={styles.eeRow}>
-        {experiences.map((experience) => (
-          <div key={experience.id} className={styles.eeBloc}>
-            <div className={styles.eeInfos}>
-              <h2>{experience.experience_title}</h2>
-              <span>{experience.experience_infos}</span>
-              <p>{experience.experience_descr}</p>
+      <div className={styles.eeRowCenter}>
+        <div className={styles.arrowLeft} onClick={scrollCarouselLeft}></div>
+        <div className={styles.eeRow} ref={carouselRef}>
+          {experiences.map((experience) => (
+            <div key={experience.id} className={styles.eeBloc}>
+              <div className={styles.eeInfos}>
+                <h2>{experience.experience_title}</h2>
+                <span>{experience.experience_infos}</span>
+                <p>{experience.experience_descr}</p>
+              </div>
+              <p className={styles.eeDate}>{experience.experience_date}</p>
             </div>
-            <p className={styles.eeDate}>{experience.experience_date}</p>
-          </div>
-        ))}
+          ))}
+        </div>
+        <div className={styles.arrowRight} onClick={scrollCarouselRight}></div>
       </div>
-
-      {/* <div className={styles.arrowL}></div>
-      <div className={styles.arrowR}></div> */}
 
       <div className={styles.eeLine}></div>
 
     </div>
-  )
+  );
 }
