@@ -45,7 +45,7 @@ export default function ProjectsList() {
             <p>{project.project_descr}</p>
             <div>
               <Link href={`/dashboard/${project._id}`}>Update</Link>
-              <DeleteDataBtn id={project._id} type="project" />
+              <DeleteDataBtn id={project._id} type="project" name={project.project_descr} />
             </div>
           </div>
         </div>

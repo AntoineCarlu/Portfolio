@@ -45,7 +45,7 @@ export default function SkillsList() {
             <p>{skill.skill_name}</p>
             <div>
               <Link href={`/dashboard/${skill._id}`}>Update</Link>
-              <DeleteDataBtn id={skill._id} type="skill" />
+              <DeleteDataBtn id={skill._id} type="skill" name={skill.skill_name} />
             </div>
           </div>
         </div>

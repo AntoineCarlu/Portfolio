@@ -1,10 +1,10 @@
 "use client";
 
-export default function DeleteDataBtn({ id, type }) {
+export default function DeleteDataBtn({ id, type, name }) {
 
   // Function to delete a data from the database with confirmation
   const deleteData = async() => {
-    const confirmed = confirm(`Voulez-vous réellement supprimer ce ${type} ?`);
+    const confirmed = confirm(`Voulez-vous réellement supprimer "${name}" ?`);
 
     if (confirmed) {
       const res = await fetch(`http://localhost:3000/api/${type}s?id=${id}`, {

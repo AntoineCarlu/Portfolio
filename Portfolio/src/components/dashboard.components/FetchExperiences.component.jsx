@@ -45,7 +45,7 @@ export default function ExperiencesList() {
             <p>{experience.experience_title}</p>
             <div>
               <Link href={`/dashboard/${experience._id}`}>Update</Link>
-              <DeleteDataBtn id={experience._id} type="experience" />
+              <DeleteDataBtn id={experience._id} type="experience" name={experience.experience_title} />
             </div>
           </div>
         </div>

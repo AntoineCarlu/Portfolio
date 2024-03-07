@@ -45,7 +45,7 @@ export default function EducationsList() {
             <p>{education.education_title}</p>
             <div>
               <Link href={`/dashboard/${education._id}`}>Update</Link>
-              <DeleteDataBtn id={education._id} type="education" />
+              <DeleteDataBtn id={education._id} type="education" name={education.education_title} />
             </div>
           </div>
         </div>
