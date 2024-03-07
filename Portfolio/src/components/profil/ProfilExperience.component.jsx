@@ -25,7 +25,7 @@ export default function ProfilExperience() {
           setExperiences([]);
           setIsError(true);
         } else {
-          setExperiences(data.experiences);
+          setExperiences(data.experiences.reverse());
         }
         setIsLoading(false);
       } catch (error) {

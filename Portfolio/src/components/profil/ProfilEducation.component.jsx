@@ -24,7 +24,7 @@ export default function ProfilEducation() {
           setEducations([]);
           setIsError(true);
         } else {
-          setEducations(data.educations);
+          setEducations(data.educations.reverse());
         }
         setIsLoading(false);
       } catch (error) {

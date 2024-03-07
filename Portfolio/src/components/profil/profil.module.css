@@ -121,7 +121,8 @@
 .eeInfos {
   padding: 10px 15px;
   width: 250px;
-  height: 250px;
+  min-height: 250px;
+  height: 100%;
   background-color: rgba(25, 27, 30);
   border-radius: 10px;
 
@@ -139,6 +140,7 @@
   }
 .eeDate {
   padding: 5px 0;
+  text-align: center;
   color: rgba(248, 13, 65);
   opacity: 95%;
 }
