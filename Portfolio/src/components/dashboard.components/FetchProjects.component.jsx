@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from './FetchList.module.css';
 import DeleteDataBtn from "./DeleteData.component";
-import UpdateProject from "./UpdateProject.component";
+import UpdateData from "./UpdateData.component";
 
 // Function to GET "Projects" from database
 const getProjects = async () => {
@@ -55,7 +55,7 @@ export default function ProjectsList() {
           </div>
           {renderUpdate === project._id && (
           <div className={styles.dashboard_update}>
-            <UpdateProject id={project._id} link={project.project_link} img={project.project_img} descr={project.project_descr} langu={project.project_langu} />
+            <UpdateData type="project" id={project._id} field1={project.project_link} field2={project.project_img} field3={project.project_descr} field4={project.project_langu} />
           </div>
           )}
         </div>
