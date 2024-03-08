@@ -38,8 +38,8 @@ export default function ProjectsList() {
     fetchProjects();
   }, []);
 
-  const handleUpdateClick = (projectId) => {
-    setRenderUpdate(renderUpdate === projectId ? null : projectId);
+  const handleUpdateClick = (Id) => {
+    setRenderUpdate(renderUpdate === Id ? null : Id);
   };
 
   return (

@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import React, { useState, useEffect } from "react";
 import styles from './FetchList.module.css';
 import DeleteDataBtn from "./DeleteData.component";
+import UpdateData from "./UpdateData.component";
 
 // Function to GET "Experiences" from database
 const getExperiences = async () => {
@@ -22,6 +22,7 @@ const getExperiences = async () => {
 
 export default function ExperiencesList() {
   const [experiences, setExperiences] = useState([]);
+  const [renderUpdate, setRenderUpdate] = useState(null);
 
   //this useEffect use the "getExperiences" async function to fetch the data into a "use-client" component
   useEffect(() => {
@@ -37,6 +38,10 @@ export default function ExperiencesList() {
     fetchExperiences();
   }, []);
 
+  const handleUpdateClick = (Id) => {
+    setRenderUpdate(renderUpdate === Id ? null : Id);
+  };
+
   return (
     <>
       {experiences.map((experience) => (
@@ -44,10 +49,15 @@ export default function ExperiencesList() {
           <div className={styles.dashboard_list}>
             <p>{experience.experience_title}</p>
             <div>
-              <Link href={`/dashboard/${experience._id}`}>Update</Link>
+              <button onClick={() => handleUpdateClick(experience._id)}>Update</button>
               <DeleteDataBtn id={experience._id} type="experience" name={experience.experience_title} />
             </div>
           </div>
+          {renderUpdate === experience._id && (
+          <div className={styles.dashboard_update}>
+            <UpdateData type="experience" id={experience._id} field1={experience.experience_title} field2={experience.experience_infos} field3={experience.experience_descr} field4={experience.experience_date} />
+          </div>
+          )}
         </div>
       ))}
     </>
