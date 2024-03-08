@@ -43,38 +43,36 @@ export default function UpdateProject({ id, link, img, descr, langu }) {
 
   // Page content
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          onChange={(e) => setNewProject_link(e.target.value)}
-          value={NewProject_link}
-          type="text"
-          placeholder='Project link'
-        />
+    <form onSubmit={handleSubmit}>
+      <input
+        onChange={(e) => setNewProject_link(e.target.value)}
+        value={NewProject_link}
+        type="text"
+        placeholder='Project link'
+      />
 
-        <input
-          onChange={(e) => setNewProject_img(e.target.value)}
-          value={NewProject_img}
-          type="text"
-          placeholder='Project image link'
-        />
+      <input
+        onChange={(e) => setNewProject_img(e.target.value)}
+        value={NewProject_img}
+        type="text"
+        placeholder='Project image link'
+      />
 
-        <input
-          onChange={(e) => setNewProject_descr(e.target.value)}
-          value={NewProject_descr}
-          type="text"
-          placeholder='Project description'
-        />
+      <input
+        onChange={(e) => setNewProject_descr(e.target.value)}
+        value={NewProject_descr}
+        type="text"
+        placeholder='Project description'
+      />
 
-        <input
-          onChange={(e) => setNewProject_langu(e.target.value)}
-          value={NewProject_langu}
-          type="text"
-          placeholder='Project languages'
-        />
+      <input
+        onChange={(e) => setNewProject_langu(e.target.value)}
+        value={NewProject_langu}
+        type="text"
+        placeholder='Project languages'
+      />
 
-        <button type="submit">Update Project</button>
-      </form>
-    </div>
+      <button type="submit">Update Project</button>
+    </form>
   );
 }

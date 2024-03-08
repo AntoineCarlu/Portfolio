@@ -1,4 +1,3 @@
-// import Link from 'next/link';
 import React, { useState, useEffect } from "react";
 import styles from './FetchList.module.css';
 import DeleteDataBtn from "./DeleteData.component";
@@ -23,7 +22,7 @@ const getProjects = async () => {
 
 export default function ProjectsList() {
   const [projects, setProjects] = useState([]);
-  const [renderUpdate, setRenderUpdate] = useState(false);
+  const [renderUpdate, setRenderUpdate] = useState(null);
 
   //this useEffect use the "getProjects" async function to fetch the data into a "use-client" component
   useEffect(() => {
@@ -39,6 +38,10 @@ export default function ProjectsList() {
     fetchProjects();
   }, []);
 
+  const handleUpdateClick = (projectId) => {
+    setRenderUpdate(renderUpdate === projectId ? null : projectId);
+  };
+
   return (
     <>
       {projects.map((project) => (
@@ -46,12 +49,15 @@ export default function ProjectsList() {
           <div className={styles.dashboard_list}>
             <p>{project.project_descr}</p>
             <div>
-              {/* <Link href={`/dashboard/project/${project._id}`}>Update</Link> */}
-              <button onClick={() => setRenderUpdate(!renderUpdate)}>Update</button>
+              <button onClick={() => handleUpdateClick(project._id)}>Update</button>
               <DeleteDataBtn id={project._id} type="project" name={project.project_descr} />
             </div>
           </div>
-          {renderUpdate ? <UpdateProject id={project._id} link={project.project_link} img={project.project_img} descr={project.project_descr} langu={project.project_langu} /> : ""}
+          {renderUpdate === project._id && (
+          <div className={styles.dashboard_update}>
+            <UpdateProject id={project._id} link={project.project_link} img={project.project_img} descr={project.project_descr} langu={project.project_langu} />
+          </div>
+          )}
         </div>
       ))}
     </>
