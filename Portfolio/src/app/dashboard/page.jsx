@@ -17,7 +17,7 @@ export default function Dashboard() {
   const [renderExperiencesList, setRenderExperiencesList] = useState(false);
 
   // Function to protect the route to being access by unauthorized user
-  useLayoutEffect(() => { 
+  useLayoutEffect(() => {
     const isAuth = isAuthenticated;
     if (!isAuth) {
       redirect('/');
