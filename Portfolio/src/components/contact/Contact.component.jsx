@@ -6,12 +6,27 @@ export default function Contact() {
       <h1><u>Contactez moi</u></h1>
       <form className={styles.contactForm}>
         <div className={styles.twoInputs}>
-          <input type='text' placeholder='Nom'></input>
-          <input type='text' placeholder='Numero'></input>
+          <div className={styles.contactInputs}>
+            <label>NOM & PRENOM (Optionnel)</label>
+            <input type='text' maxLength={50} placeholder="Votre nom et prénom (Ou nom d'entreprise)"></input>
+          </div>
+          <div className={styles.contactInputs}>
+            <label>NUMERO (Optionnel)</label>
+            <input type='text' maxLength={25} placeholder='Numero de téléphone'></input>
+          </div>
         </div>
-        <input type='text' placeholder='Email'></input>
-        <input type='text' placeholder='Sujet/Titre'></input>
-        <input type='text' placeholder='Message'></input>
+        <div className={styles.contactInputs}>
+          <label>EMAIL</label>
+          <input type='text' maxLength={50} required placeholder='Adresse email'></input>
+        </div>
+        <div className={styles.contactInputs}>
+          <label>SUJET</label>
+          <input type='text' maxLength={50} required placeholder='Sujet / Titre'></input>
+        </div>
+        <div className={styles.contactInputs}>
+          <label>MESSAGE</label>
+          <textarea type='text' required placeholder='Contenu du message'></textarea>
+        </div>
         <button type='submit'>ENVOYER</button>
       </form>
     </div>
