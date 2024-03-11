@@ -6,7 +6,7 @@ import UpdateData from "./UpdateData.component";
 // Function to GET "Educations" from database
 const getEducations = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/educations", {
+    const res = await fetch("/api/educations", {
       cache: "no-store",
     });
 

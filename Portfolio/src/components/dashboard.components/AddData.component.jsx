@@ -30,7 +30,7 @@ export default function AddData({ fields }) {
 
     //create the data if everything is ok
     try {
-      const res = await fetch(`http://localhost:3000/api/${fields[0]}s`, {
+      const res = await fetch(`/api/${fields[0]}s`, {
         method: 'POST',
         headers: {
           "Content-type": "application/json",
@@ -39,10 +39,10 @@ export default function AddData({ fields }) {
       });
 
       if (res.ok) {
-        alert(`${fields[0]} created successfully !`);
+        alert(`${fields[0]} créé avec succès !`);
         setFormData(initialState);
       } else {
-        throw new Error(`Failed to create a new ${fields[0]}.`);
+        throw new Error(`Echec lors de la création d'un nouveau ${fields[0]}.`);
       }
     } catch (error) {
       console.log(error);

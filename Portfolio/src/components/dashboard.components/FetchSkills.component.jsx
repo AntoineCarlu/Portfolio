@@ -6,7 +6,7 @@ import UpdateData from "./UpdateData.component";
 // Function to GET "Skills" from database
 const getSkills = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/skills", {
+    const res = await fetch("/api/skills", {
       cache: "no-store",
     });
 

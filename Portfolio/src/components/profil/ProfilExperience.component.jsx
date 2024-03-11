@@ -11,7 +11,7 @@ export default function ProfilExperience() {
   useEffect(() => {
     const getExperiences = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/experiences", {
+        const res = await fetch("/api/experiences", {
           cache: "no-store",
         });
 

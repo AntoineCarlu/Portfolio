@@ -11,7 +11,7 @@ export default function ProfilEducation() {
   useEffect(() => {
     const getEducations = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/educations", {
+        const res = await fetch("/api/educations", {
           cache: "no-store",
         });
 

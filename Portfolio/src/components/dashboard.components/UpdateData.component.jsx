@@ -18,7 +18,7 @@ export default function UpdateData({ type, id, field1, field2, field3, field4 })
     }
 
     try {
-      const res = await fetch(`http://localhost:3000/api/${type}s/${id}`, {
+      const res = await fetch(`/api/${type}s/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
@@ -33,7 +33,7 @@ export default function UpdateData({ type, id, field1, field2, field3, field4 })
         setValue3("");
         setValue4("");
       } else {
-        throw new Error(`Failed to update ${type}.`);
+        throw new Error(`Echec de la modification de ${type}.`);
       }
     } catch (error) {
       console.log(error);

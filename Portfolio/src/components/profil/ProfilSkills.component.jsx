@@ -11,7 +11,7 @@ export default function ProfilSkills() {
   useEffect(() => {
     const getSkills = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/skills", {
+        const res = await fetch("/api/skills", {
           cache: "no-store",
         });
 
