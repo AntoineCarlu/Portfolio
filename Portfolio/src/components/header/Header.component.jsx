@@ -90,7 +90,7 @@ export default function Header() {
           <a href='#Accueil' className={currentSection === 'Accueil' ? styles.active : ''}>Accueil</a>
           <a href='#Projects' className={currentSection === 'Projects' ? styles.active : ''}>Projets</a>
           <a href='#Profil' className={currentSection === 'Profil' ? styles.active : ''}>Profil</a>
-          <a href='#' className={currentSection === '' ? styles.active : ''}>Contact</a>
+          <a href='#Contact' className={currentSection === 'Contact' ? styles.active : ''}>Contact</a>
         </div>
         </div>
         <div className={styles.burger} onClick={burgerClicked}>
