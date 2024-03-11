@@ -25,6 +25,7 @@
     .buttons_div button {
       width: 100px;
       height: 70px;
+      font-size: 14px;
       color: white;
       background-color: rgba(25, 27, 30);
       border: none;
@@ -179,7 +180,6 @@
 
 
 /* RESPONSIVE */
-/*Size of elements*/
 @media all and (min-width: 380px) {
   .profil .buttons_div {
     width: 360px;

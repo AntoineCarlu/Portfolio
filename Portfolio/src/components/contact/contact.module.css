@@ -10,3 +10,59 @@
   flex-direction: column;
   gap: 25px;
 }
+  .contact h1 {
+    margin: 10px;
+    font-size: 28px;
+  }
+  .contactForm {
+    width: 90%;
+    height: fit-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+    .contactForm .twoInputs {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+    .contactForm input {
+      padding-left: 10px;
+      width: 100%;
+      min-height: 40px;
+      /* text-wrap: wrap; */
+      background-color: #EEEEEE;
+      border-radius: 5px;
+      border: none;
+    }
+    .contactForm button {
+      width: 150px;
+      height: 40px;
+      background-color: #EEEEEE;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+
+
+/* RESPONSIVE */
+@media all and (min-width: 520px) {
+  .contact h1 {
+    font-size: 30px;
+  }
+  .contactForm {
+    width: 500px;
+  }
+}
+@media all and (min-width: 980px) {
+  .contact h1 {
+    font-size: 32px;
+  }
+  .contactForm {
+    width: 600px;
+  }
+}

@@ -10,6 +10,10 @@
   align-items: center;
   flex-direction: column;
 }
+  .projects h1 {
+    margin: 10px;
+    font-size: 28px;
+  }
   .projectsFlex {
     width: 90%;
     height: fit-content;
@@ -19,10 +23,6 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-  }
-  .projects h1 {
-    margin: 10px;
-    font-size: 28px;
   }
   /*The boxs*/
   .projectBox {
@@ -61,7 +61,7 @@
       transition: all 0.3s ease-in;
     }
     .projectBox .box_text p {
-      font-size: 14px;
+      font-size: 15px;
     }
       /*Animation on hover effect*/
       .projectBox:hover {
@@ -77,11 +77,9 @@
     transition: all 1s ease;
   }
 
+
 /* RESPONSIVE */
-@media all and (min-width: 380px) {
-  .projects h1 {
-    font-size: 30px;
-  }
+@media all and (min-width: 340px) {
   .projectBox {
     margin: 15px;
     width: 250px;
@@ -96,10 +94,12 @@
     height: 215px;
   }
 }
-@media all and (min-width: 900px) {
+@media all and (min-width: 520px) {
   .projects h1 {
-    font-size: 32px;
+    font-size: 30px;
   }
+}
+@media all and (min-width: 900px) {
   .projectBox {
     margin: 20px;
     width: 350px;
@@ -122,6 +122,9 @@
   }
 }
 @media all and (min-width: 980px) {
+  .projects h1 {
+    font-size: 32px;
+  }
   .projectsFlex {
     max-width: 1200px;
   }
