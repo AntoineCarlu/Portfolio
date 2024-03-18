@@ -3,11 +3,8 @@
 import { useState } from 'react';
 import styles from './contact.module.css';
 
-const initValues = { name: '', number: '', email: '', subject: '', message: '' };
-const initForm = { values:initValues };
-
 export default function Contact() {
-  const [formData, setFormData] = useState(initForm);
+  const [formData, setFormData] = useState({ name: '', number: '', email: '', subject: '', message: '' });
 
   // Handle the change in inputs to update the state and values
   const handleChange = (e) => {
@@ -23,20 +20,20 @@ export default function Contact() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          // Accept: 'application/json',
+          Accept: 'application/json',
         },
         body: JSON.stringify(formData),
       });
 
       if (res.ok) {
+        setFormData({ name: '', number: '', email: '', subject: '', message: '' });
         alert('Email envoyé avec succès !');
-        setFormData({ initForm });
       } else {
-        alert("Erreur lors de l'envoi de l'email 1");
+        alert("Erreur lors de l'envoi de l'email. (1)");
       }
     } catch (error) {
-      console.error("Erreur lors de l'envoi de l'email 2 :", error);
-      alert("Erreur lors de l'envoi de l'email 2");
+      console.error("Erreur lors de l'envoi de l'email :", error);
+      alert("Erreur lors de l'envoi de l'email. (2)");
     }
   };
 
