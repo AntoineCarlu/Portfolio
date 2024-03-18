@@ -39,7 +39,7 @@ export default function Contact() {
 
   // Page content
   return (
-    <div className={styles.contact} id="Contact">
+    <section className={styles.contact} id="Contact">
       <h1><u>Contactez moi</u></h1>
       <form className={styles.contactForm} onSubmit={handleSubmit}>
         <div className={styles.twoInputs}>
@@ -51,7 +51,7 @@ export default function Contact() {
               name='name'
               value={formData.name}
               onChange={handleChange}
-              placeholder="Votre nom et prénom (Ou nom d'entreprise)"
+              placeholder="Votre nom et prénom (ou nom d'entreprise)"
             />
           </div>
           <div className={styles.contactInputs}>
@@ -62,7 +62,7 @@ export default function Contact() {
               name='number'
               value={formData.number}
               onChange={handleChange}
-              placeholder='Numero de téléphone'
+              placeholder='Numéro de téléphone'
             />
           </div>
         </div>
@@ -106,6 +106,6 @@ export default function Contact() {
           disabled={!formData.email || !formData.subject || !formData.message}
         >ENVOYER</button>
       </form>
-    </div>
+    </section>
   );
 }
