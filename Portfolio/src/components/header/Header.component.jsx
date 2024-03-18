@@ -8,8 +8,12 @@ export default function Header() {
   const [currentSection, setCurrentSection] = useState('home');
   const [burgerCheck, setBurgerCheck] = useState(() => {
     //get initial value from local storage or default to false
-    const storedValue = localStorage.getItem('burgerCheck');
-    return storedValue ? JSON.parse(storedValue) : false;
+    if (typeof localStorage !== 'undefined') {
+      const storedValue = localStorage.getItem('burgerCheck');
+      return storedValue ? JSON.parse(storedValue) : false;
+    } else {
+      return false; // Default value when localStorage is not available
+    }
   });
 
   // Script to display header nav-bar list when user click on the burger-menu icon
@@ -31,8 +35,7 @@ export default function Header() {
       navList.style.transform = "translateX(0%)";
       setBurgerCheck(true);
       localStorage.setItem('burgerCheck', JSON.stringify(true));
-    }
-    else if (burgerCheck) {
+    } else if (burgerCheck) {
       //change visual of the burger icon
       Line1.style.width = "30px";
       Line1.style.borderColor = "white";
@@ -44,8 +47,7 @@ export default function Header() {
       navList.style.transform = "translateX(100%)";
       setBurgerCheck(false);
       localStorage.setItem('burgerCheck', JSON.stringify(false));
-    }
-    else {
+    } else {
       throw new Error('Une erreur a été produite dans la liste de conditions.');
     }
   }
